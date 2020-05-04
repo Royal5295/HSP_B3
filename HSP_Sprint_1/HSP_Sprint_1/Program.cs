@@ -24,6 +24,9 @@ namespace HSP_Sprint_1
             double Volume = (height * width * length);
             Console.WriteLine("Density of rectangle ={0}", Mass / Volume);
             Console.WriteLine("Second Moment of Inertia Ix ={0}", (height * width * width * width) / 12);
+            Console.WriteLine("Secoond Moment of Inertia Iy ={0}", (height * height * height * width) / 12);
+            Console.ReadKey();
+
 
 
 
