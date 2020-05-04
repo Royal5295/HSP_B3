@@ -10,7 +10,20 @@ namespace HSP_Sprint_1
     {
         static void Main(string[] args)
         {
-            //Test_1
+            Console.Write("Enter the rectangle's height:");
+            double height = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the rectangle's width:");
+            double width = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the rectangle's length:");
+            double length = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the rectangle's Mass:");
+            double Mass = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Perimeter of rectangle = {0}", 2 * (width + height));
+            Console.WriteLine("Area of rectangle = {0}", width * height);
+            Console.WriteLine("Volume of rectangle ={0}", height * width * length);
+            double Volume = (height * width * length);
+            Console.WriteLine("Density of rectangle ={0}", Mass / Volume);
+            Console.WriteLine("Second Moment of Inertia Ix ={0}", (height * width * width * width) / 12);
 
 
 
