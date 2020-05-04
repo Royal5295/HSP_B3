@@ -10,38 +10,46 @@ namespace HSP_Sprint_1
     {
         static void Main(string[] args)
         {
-            // Anweisungen mit Variablen
-            Console.Write("Enter the rectangle's height:");
-            double height = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter the rectangle's width:");
-            double width = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter the rectangle's length:");
-            double length = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter the rectangle's Mass:");
-            double Mass = Convert.ToDouble(Console.ReadLine());
+            try
+            {
 
 
-            // Calculations
-            
-           
+                // Anweisungen mit Variablen
+                Console.Write("Enter the rectangle's height:");
+                double height = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter the rectangle's width:");
+                double width = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter the rectangle's length:");
+                double length = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter the rectangle's Mass:");
+                double Mass = Convert.ToDouble(Console.ReadLine());
+
+
+                // Calculations
+
+
 
                 double Volume = (height * width * length);
 
-            double Area = (width * height);
+                double Area = (width * height);
 
-            double Density = (Mass / Volume);
+                double Density = (Mass / Volume);
 
-            double IXX = ((height * width * width * width) / 12);
+                double IXX = ((height * width * width * width) / 12);
 
-            double IYY = ((height * height * height * width) / 12);
+                double IYY = ((height * height * height * width) / 12);
 
-            double Perimeter = (2*(width+height));
+                double Perimeter = (2 * (width + height));
+            }
 
+            catch
+            {
+                Console.WriteLine("Error");
 
-
+            }
 
 
 
