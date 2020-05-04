@@ -10,21 +10,53 @@ namespace HSP_Sprint_1
     {
         static void Main(string[] args)
         {
+            // Anweisungen mit Variablen
             Console.Write("Enter the rectangle's height:");
             double height = Convert.ToDouble(Console.ReadLine());
+
             Console.Write("Enter the rectangle's width:");
             double width = Convert.ToDouble(Console.ReadLine());
+
             Console.Write("Enter the rectangle's length:");
             double length = Convert.ToDouble(Console.ReadLine());
+
             Console.Write("Enter the rectangle's Mass:");
             double Mass = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Perimeter of rectangle = {0}", 2 * (width + height));
-            Console.WriteLine("Area of rectangle = {0}", width * height);
-            Console.WriteLine("Volume of rectangle ={0}", height * width * length);
+
+
+            // Calculations
+
+           
+
             double Volume = (height * width * length);
-            Console.WriteLine("Density of rectangle ={0}", Mass / Volume);
-            Console.WriteLine("Second Moment of Inertia Ix ={0}", (height * width * width * width) / 12);
-            Console.WriteLine("Secoond Moment of Inertia Iy ={0}", (height * height * height * width) / 12);
+
+            double Area = (width * height);
+
+            double Density = (Mass / Volume);
+
+            double IXX = ((height * width * width * width) / 12);
+
+            double IYY = ((height * height * height * width) / 12);
+
+            double Perimeter = (2*(width+height));
+
+
+
+
+
+
+
+
+
+
+            // Ausgaben
+          
+            Console.WriteLine("Perimeter of rectangle = {0}", Perimeter);
+            Console.WriteLine("Area of rectangle = {0}", Area);
+            Console.WriteLine("Volume of rectangle ={0}",Volume);
+            Console.WriteLine("Density of rectangle ={0}",Density);
+            Console.WriteLine("Second Moment of Inertia Ixx ={0}", IXX);
+            Console.WriteLine("Second Moment of Inertia Iyy ={0}",IYY);
             Console.ReadKey();
 
 
