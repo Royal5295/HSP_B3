@@ -49,6 +49,10 @@ namespace HSP_Sprint_1
 
                     double IYY = ((height * height * height * width) / 12);
 
+                    double WXX = ((width * height * height) / 6);
+
+                    double WYY = ((height * width * width) / 6);
+
                     double Perimeter = (2 * (width + height));
 
                     // Ausgaben
@@ -59,6 +63,8 @@ namespace HSP_Sprint_1
                     Console.WriteLine("Density of rectangle ={0}", Density);
                     Console.WriteLine("Second Moment of Inertia Ixx ={0}", IXX);
                     Console.WriteLine("Second Moment of Inertia Iyy ={0}", IYY);
+                    Console.WriteLine("Moments of resistance Wxx ={0}", WXX);
+                    Console.WriteLine("Moments of resistance Wyy ={0}", WYY);
                     Console.ReadKey();
                 }
 
