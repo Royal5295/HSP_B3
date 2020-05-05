@@ -13,6 +13,7 @@ namespace HSP_Sprint_1
 
             double a = 0;
             double b = 0;
+            double c = 0;
             bool checkrestart = false;
 
             Console.WriteLine("Der Rechteckcalculator");
@@ -26,15 +27,22 @@ namespace HSP_Sprint_1
             Console.WriteLine("Bitte geben Sie Länge b ein.");
             String eingabe_b = Console.ReadLine();
             b = Convert.ToDouble(eingabe_b);
+            
+
+            Console.WriteLine("Bitte geben Sie Laange c ein.");
+            String eingabe_c = Console.ReadLine();
+            c = Convert.ToDouble(eingabe_c);
             */
             do
             {
 
                 a = Eingabe_a();                                //Länge a   
                 b = Eingabe_b();                                //Länge b
+                c = Eingabe_c();                               //Lange c
                 Flaeche_Ausgabe(a, b);
                 Schwerpunkt_Ausgabe(a, b);
                 Flaechentraegheitsmoment_Ausgabe(a, b);
+                Volume_Ausgabe(a, b, c);
                 Console.WriteLine("Möchten Sie eine weitere Rechnung durchführen? y/n");
                 checkrestart = (Console.ReadKey().KeyChar == 'y');
                 Console.WriteLine();
@@ -63,6 +71,7 @@ namespace HSP_Sprint_1
                 {
                     Console.WriteLine("Der eingegebene Wert ist keine Zahl. Bitte geben sie eine Zahl ein.");
                 }
+
 
             }
             while (checkmate);
@@ -93,55 +102,88 @@ namespace HSP_Sprint_1
             return b;
         }
 
-        static double Flaeche_berechnen(double a, double b)
+        static double Eingabe_c()
         {
-            double flaeche = a * b;
-            return flaeche;
-        }
+            double c = 0;
+            bool checkmate = true;
+            do
+            {
+                Console.WriteLine("Bitte geben Sie Länge c ein.");
+                String eingabe_c = Console.ReadLine();
+                try
+                {
+                    c = Convert.ToDouble(eingabe_c);
+                    checkmate = false;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Der eingegebene Wert ist keine Zahl. Bitte geben sie eine Zahl ein.");
 
-        static double Schwerpunkt_x_Rechteck_berechnen(double a)
-        {
-            double x = a / 2;
-            return x;
-        }
+                }
 
-        static double Schwerpunkt_y_Rechteck_berechnen(double b)
-        {
-            double y = b / 2;
-            return y;
-        }
+            }
+            while (checkmate);
+            return c;
 
-        static double Flaechentraegheitsmoment_Rechteck_Iy_berechnen(double a, double b)
-        {
-            double Iy = (b * (Math.Pow(a, 3))) / 12;
-            return Iy;
         }
+            static double Flaeche_berechnen(double a, double b)
+            {
+                double flaeche = a * b;
+                return flaeche;
+            }
+            static double Volume_berechnen(double a, double b, double c)
+             {
+                double volume = a * b * c;
+                return volume;
+             }
 
-        static double Flaechentraegheitsmoment_Rechteck_Iz_berechnen(double a, double b)
-        {
-            double Iz = (a * (Math.Pow(b, 3))) / 12;
-            return Iz;
-        }
+            static double Schwerpunkt_x_Rechteck_berechnen(double a)
+            {
+                double x = a / 2;
+                return x;
+            }
 
-        static void Flaeche_Ausgabe(double a, double b)
-        {
-            Console.WriteLine("Die Fläche beträgt: ");
-            Console.WriteLine(Flaeche_berechnen(a, b));
-        }
-        static void Schwerpunkt_Ausgabe(double a, double b)
-        {
-            Console.WriteLine("Der Schwerpunkt liegt bei:");
-            Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a));
-            Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b));
-        }
+            static double Schwerpunkt_y_Rechteck_berechnen(double b)
+            {
+                double y = b / 2;
+                return y;
+            }
 
-        static void Flaechentraegheitsmoment_Ausgabe(double a, double b)
-        {
-            Console.WriteLine("Das Flächenträgheitsmoment liegt bei:");
-            Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b));
-            Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b));
-            Console.WriteLine("Iyz = 0");
-        }
+            static double Flaechentraegheitsmoment_Rechteck_Iy_berechnen(double a, double b)
+            {
+                double Iy = (b * (Math.Pow(a, 3))) / 12;
+                return Iy;
+            }
 
+            static double Flaechentraegheitsmoment_Rechteck_Iz_berechnen(double a, double b)
+            {
+                double Iz = (a * (Math.Pow(b, 3))) / 12;
+                return Iz;
+            }
+
+            static void Flaeche_Ausgabe(double a, double b)
+            {
+                Console.WriteLine("Die Fläche beträgt: ");
+                Console.WriteLine(Flaeche_berechnen(a, b));
+            }
+            static void Schwerpunkt_Ausgabe(double a, double b)
+            {
+                Console.WriteLine("Der Schwerpunkt liegt bei:");
+                Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a));
+                Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b));
+            }
+
+            static void Flaechentraegheitsmoment_Ausgabe(double a, double b)
+            {
+                Console.WriteLine("Das Flächenträgheitsmoment liegt bei:");
+                Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b));
+                Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b));
+                Console.WriteLine("Iyz = 0");
+            }
+            static void Volume_Ausgabe(double a, double b, double c)
+            {
+                Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c));
+                
+            }
+        }
     }
-}
