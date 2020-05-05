@@ -54,10 +54,31 @@ namespace HSP_Sprint_1
             {
                 Console.WriteLine("Bitte geben Sie Länge a ein.");
                 String eingabe_a = Console.ReadLine();
+
+
                 try
                 {
                     a = Convert.ToDouble(eingabe_a);
-                    checkmate = false;
+
+
+                    // Negative oder Null Werte werden abgefangen und Schleife beginnt erneut.
+                     
+                    if (a == 0)
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Werte müssen größer als Null sein");
+                    }
+                    else if(a <= 0)
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Bitte keine negativen Werte eingeben");
+                    }
+
+                    else if ( a >=0)
+                    {
+                        checkmate = false;
+
+                    }
                 }
                 catch (FormatException)
                 {
@@ -81,7 +102,25 @@ namespace HSP_Sprint_1
                 try
                 {
                     b = Convert.ToDouble(eingabe_b);
-                    checkmate = false;
+
+
+                    // Siehe Z. 64
+
+                    if (b == 0)
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Werte müssen größer als Null sein");
+                    }
+                    else if (b <= 0)
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Bitte keine negativen Werte eingeben");
+                    }
+                    else if (b >= 0)
+                    {
+                        checkmate = false;   
+                    
+                    }
                 }
                 catch (FormatException)
                 {
