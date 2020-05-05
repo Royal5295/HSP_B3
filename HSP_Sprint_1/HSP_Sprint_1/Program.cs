@@ -30,8 +30,8 @@ namespace HSP_Sprint_1
             do
             {
 
-                a = Eingabe_a();
-                b = Eingabe_b();
+                a = Eingabe_a();                                //Länge a   
+                b = Eingabe_b();                                //Länge b
                 Flaeche_Ausgabe(a, b);
                 Schwerpunkt_Ausgabe(a, b);
                 Flaechentraegheitsmoment_Ausgabe(a, b);
