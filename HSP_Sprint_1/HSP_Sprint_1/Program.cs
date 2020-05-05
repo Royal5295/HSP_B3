@@ -32,9 +32,9 @@ namespace HSP_Sprint_1
 
                 a = Eingabe_a();                                //Länge a   
                 b = Eingabe_b();                                //Länge b
-                Flaeche_Ausgabe(a, b);
-                Schwerpunkt_Ausgabe(a, b);
-                Flaechentraegheitsmoment_Ausgabe(a, b);
+                Ausgabe_Flaeche(a, b);
+                Ausgabe_Schwerpunkt(a, b);
+                Ausgabe_Flaechentragheitsmoment(a, b);
                 Console.WriteLine("Möchten Sie eine weitere Rechnung durchführen? y/n");
                 checkrestart = (Console.ReadKey().KeyChar == 'y');
                 Console.WriteLine();
@@ -123,19 +123,19 @@ namespace HSP_Sprint_1
             return Iz;
         }
 
-        static void Flaeche_Ausgabe(double a, double b)
+        static void Ausgabe_Flaeche(double a, double b)
         {
             Console.WriteLine("Die Fläche beträgt: ");
             Console.WriteLine(Flaeche_berechnen(a, b));
         }
-        static void Schwerpunkt_Ausgabe(double a, double b)
+        static void Ausgabe_Schwerpunkt(double a, double b)
         {
             Console.WriteLine("Der Schwerpunkt liegt bei:");
             Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a));
             Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b));
         }
 
-        static void Flaechentraegheitsmoment_Ausgabe(double a, double b)
+        static void Ausgabe_Flaechentragheitsmoment(double a, double b)
         {
             Console.WriteLine("Das Flächenträgheitsmoment liegt bei:");
             Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b));
