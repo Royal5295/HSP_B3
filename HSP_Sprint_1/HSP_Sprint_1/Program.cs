@@ -31,8 +31,8 @@ namespace HSP_Sprint_1
                     Console.Write("Enter the rectangle's length:");
                     double length = Convert.ToDouble(Console.ReadLine());
 
-                    Console.Write("Enter the rectangle's Mass:");
-                    double Mass = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Enter the rectangle's density:");
+                    double density = Convert.ToDouble(Console.ReadLine());
 
 
                     // Calculations
@@ -43,7 +43,7 @@ namespace HSP_Sprint_1
 
                     double Area = (width * height);
 
-                    double Density = (Mass / Volume);
+                    double Mass = (density * Volume);
 
                     double IXX = ((height * width * width * width) / 12);
 
@@ -60,7 +60,7 @@ namespace HSP_Sprint_1
                     Console.WriteLine("Perimeter of rectangle = {0}", Perimeter);
                     Console.WriteLine("Area of rectangle = {0}", Area);
                     Console.WriteLine("Volume of rectangle ={0}", Volume);
-                    Console.WriteLine("Density of rectangle ={0}", Density);
+                    Console.WriteLine("Mass of rectangle ={0}", Mass);
                     Console.WriteLine("Second Moment of Inertia Ixx ={0}", IXX);
                     Console.WriteLine("Second Moment of Inertia Iyy ={0}", IYY);
                     Console.WriteLine("Moments of resistance Wxx ={0}", WXX);
