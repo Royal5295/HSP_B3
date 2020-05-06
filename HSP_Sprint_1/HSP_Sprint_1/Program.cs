@@ -19,26 +19,13 @@ namespace HSP_Sprint_1
             Console.WriteLine("Der Rechteckcalculator");
             Console.WriteLine();
 
-            /*
-            Console.WriteLine("Bitte geben Sie Länge a ein.");
-            String eingabe_a = Console.ReadLine();
-            double  a = Convert.ToDouble(eingabe_a);
-            
-            Console.WriteLine("Bitte geben Sie Länge b ein.");
-            String eingabe_b = Console.ReadLine();
-            b = Convert.ToDouble(eingabe_b);
-            
-
-            Console.WriteLine("Bitte geben Sie Laange c ein.");
-            String eingabe_c = Console.ReadLine();
-            c = Convert.ToDouble(eingabe_c);
-            */
+           
             do
             {
 
                 a = Eingabe_a();                                //Länge a   
                 b = Eingabe_b();                                //Länge b 
-                c = Eingabe_c();                               //Lange c
+                c = Eingabe_c();                                //Lange c
                 m = Eingabe_m();                                // Material Auswahl
                 Ausgabe_Flaeche(a, b);
                 Ausgabe_Schwerpunkt(a, b);
@@ -55,7 +42,7 @@ namespace HSP_Sprint_1
             Console.WriteLine("Das Programm wird beendet.");
             Console.ReadKey();
         }
-         // Eingaben a, b, c, M,
+                                                                    // Eingaben a, b, c, M,
         static double Eingabe_a()
         {
             double a = 0;
@@ -72,17 +59,17 @@ namespace HSP_Sprint_1
                     a = Convert.ToDouble(eingabe_a);
 
 
-                    // Negative oder Null Werte werden abgefangen und Schleife beginnt erneut.
+                     // Negative oder Null Werte werden abgefangen und Schleife beginnt erneut.
                      
                     if (a == 0)
                     {
                         checkmate = true;
-                        Console.WriteLine("Werte müssen größer als Null sein");
+                        Console.WriteLine("Werte müssen größer als Null sein.");
                     }
                     else if(a <= 0)
                     {
                         checkmate = true;
-                        Console.WriteLine("Bitte keine negativen Werte eingeben");
+                        Console.WriteLine("Bitte keine negativen Werte eingeben.");
                     }
 
                     else if ( a >=0)
@@ -121,12 +108,12 @@ namespace HSP_Sprint_1
                     if (b == 0)
                     {
                         checkmate = true;
-                        Console.WriteLine("Werte müssen größer als Null sein");
+                        Console.WriteLine("Werte müssen größer als Null sein.");
                     }
                     else if (b <= 0)
                     {
                         checkmate = true;
-                        Console.WriteLine("Bitte keine negativen Werte eingeben");
+                        Console.WriteLine("Bitte keine negativen Werte eingeben.");
                     }
                     else if (b >= 0)
                     {
@@ -164,12 +151,12 @@ namespace HSP_Sprint_1
                     if (c == 0)
                     {
                         checkmate = true;
-                        Console.WriteLine("Werte müssen größer als Null sein");
+                        Console.WriteLine("Werte müssen größer als Null sein.");
                     }
                     else if (c <= 0)
                     {
                         checkmate = true;
-                        Console.WriteLine("Bitte keine negativen Werte eingeben");
+                        Console.WriteLine("Bitte keine negativen Werte eingeben.");
                     }
                     else if (c >= 0)
                     {
@@ -187,16 +174,16 @@ namespace HSP_Sprint_1
             return c;
             
         }
-
-        static double Eingabe_m()
+                                    //Auswahl Material, zwischen Stahl und Alu
+        static double Eingabe_m()               
         {
             double m = 0;
             bool checkmate = true;
 
             do
             {
-                Console.WriteLine("Bitte wählen sie zwischen 1 für Stahl und 2 für Aluminium.");
-                Console.WriteLine(" Stahl beträgt 7.85 g/cm^3 und Aluminium 2.7g/cm^3");
+                Console.WriteLine("Bitte wählen sie zwischen 1 für Stahl und 2 + für Aluminium.");
+                Console.WriteLine(" Dichte von Stahl beträgt: 7.85 g/cm^3 und Aluminium: 2.7g/cm^3.");
                 String eingabe_m = Console.ReadLine();
 
                 try
@@ -209,21 +196,21 @@ namespace HSP_Sprint_1
                     if (m == 1)
                     {
                         checkmate = false;
-                        Console.WriteLine("Stahl gewählt");
+                        Console.WriteLine("Stahl gewählt.");
                         m = 7.85;
 
                     }
                     else if (m == 2)
                     {
                         checkmate = false;
-                        Console.WriteLine("Aluminium gewählt");
+                        Console.WriteLine("Aluminium gewählt.");
                         m = 2.7;
 
                     }
                     else
                     {
                         checkmate = true;
-                        Console.WriteLine("Falsche Eingabe, bitte zwischen 1 und 2 wählen");
+                        Console.WriteLine("Falsche Eingabe, bitte zwischen 1 und 2 wählen.");
                     }
                 }
                 catch (FormatException)
@@ -297,7 +284,7 @@ namespace HSP_Sprint_1
 
         static void Ausgabe_Gewicht(double a, double b, double c, double m)
         {
-            Console.WriteLine("Gewicht ist:" + Gewicht_berechnen(a,b,c,m));
+            Console.WriteLine("Gewicht ist:" + Gewicht_berechnen(a,b,c,m)+ " gramm");
 
 
         }
@@ -305,14 +292,14 @@ namespace HSP_Sprint_1
 
         static void Volume_Ausgabe(double a, double b, double c)
         {
-            Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c));
+            Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c) + " cm^3");
 
         }
 
         static void Ausgabe_Flaeche(double a, double b)
         {
-            Console.WriteLine("Die Fläche beträgt: ");
-            Console.WriteLine(Flaeche_berechnen(a, b));
+            Console.WriteLine("Die Fläche beträgt: " + Flaeche_berechnen(a, b)+ "cm^2 ");
+          
         }
         static void Ausgabe_Schwerpunkt(double a, double b)
         {
@@ -324,8 +311,8 @@ namespace HSP_Sprint_1
         static void Ausgabe_Flaechentragheitsmoment(double a, double b)
         {
             Console.WriteLine("Das Flächenträgheitsmoment liegt bei:");
-            Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b));
-            Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b));
+            Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b) + "cm^4");
+            Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b) + "cm^4");
             Console.WriteLine("Iyz = 0");
         }
 
