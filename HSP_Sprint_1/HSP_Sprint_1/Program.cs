@@ -54,7 +54,7 @@ namespace HSP_Sprint_1
             Console.WriteLine("Das Programm wird beendet.");
             Console.ReadKey();
         }
-
+         // Eingaben a, b, c, M,
         static double Eingabe_a()
         {
             double a = 0;
@@ -147,19 +147,38 @@ namespace HSP_Sprint_1
         {
             double c = 0;
             bool checkmate = true;
+
             do
             {
                 Console.WriteLine("Bitte geben Sie Länge c ein.");
                 String eingabe_c = Console.ReadLine();
+
                 try
                 {
                     c = Convert.ToDouble(eingabe_c);
-                    checkmate = false;
+
+
+                    // Siehe Z. 64
+
+                    if (c == 0)
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Werte müssen größer als Null sein");
+                    }
+                    else if (c <= 0)
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Bitte keine negativen Werte eingeben");
+                    }
+                    else if (c >= 0)
+                    {
+                        checkmate = false;
+
+                    }
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Der eingegebene Wert ist keine Zahl. Bitte geben sie eine Zahl ein.");
-
                 }
 
             }
@@ -167,6 +186,27 @@ namespace HSP_Sprint_1
             return c;
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Berechnungen
+
+
+
             static double Flaeche_berechnen(double a, double b)
             {
                 double flaeche = a * b;
@@ -183,7 +223,42 @@ namespace HSP_Sprint_1
                 double x = a / 2;
                 return x;
             }
+        static double Schwerpunkt_y_Rechteck_berechnen(double b)
+        {
+            double y = b / 2;
+            return y;
+        }
 
+        static double Flaechentraegheitsmoment_Rechteck_Iy_berechnen(double a, double b)
+        {
+            double Iy = (b * (Math.Pow(a, 3))) / 12;
+            return Iy;
+        }
+
+
+        static double Flaechentraegheitsmoment_Rechteck_Iz_berechnen(double a, double b)
+        {
+            double Iz = (a * (Math.Pow(b, 3))) / 12;
+            return Iz;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        // Ausgaben
+
+        static void Volume_Ausgabe(double a, double b, double c)
+        {
+            Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c));
+
+        }
 
         static void Ausgabe_Flaeche(double a, double b)
         {
@@ -205,43 +280,18 @@ namespace HSP_Sprint_1
             Console.WriteLine("Iyz = 0");
         }
 
-            static double Schwerpunkt_y_Rechteck_berechnen(double b)
-            {
-                double y = b / 2;
-                return y;
-            }
-
-            static double Flaechentraegheitsmoment_Rechteck_Iy_berechnen(double a, double b)
-            {
-                double Iy = (b * (Math.Pow(a, 3))) / 12;
-                return Iy;
-            }
 
 
-            static double Flaechentraegheitsmoment_Rechteck_Iz_berechnen(double a, double b)
-            {
-                double Iz = (a * (Math.Pow(b, 3))) / 12;
-                return Iz;
-            }
 
-            static void Flaeche_Ausgabe(double a, double b)
-            {
-                Console.WriteLine("Die Fläche beträgt: ");
-                Console.WriteLine(Flaeche_berechnen(a, b));
-            }
-            static void Schwerpunkt_Ausgabe(double a, double b)
-            {
-                Console.WriteLine("Der Schwerpunkt liegt bei:");
-                Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a));
-                Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b));
-            }
 
-           
+
+
+
+
+
             
-            static void Volume_Ausgabe(double a, double b, double c)
-            {
-                Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c));
-                
-            }
+
+            
+            
         }
     }
