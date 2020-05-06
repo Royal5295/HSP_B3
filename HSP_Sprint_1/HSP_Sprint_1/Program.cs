@@ -10,7 +10,7 @@ namespace HSP_Sprint_1
     {
         static public void Main(string[] args)
         {
-
+            double m = 0;
             double a = 0;
             double b = 0;
             double c = 0;
@@ -39,11 +39,12 @@ namespace HSP_Sprint_1
                 a = Eingabe_a();                                //Länge a   
                 b = Eingabe_b();                                //Länge b 
                 c = Eingabe_c();                               //Lange c
+                m = Eingabe_m();                                // Material Auswahl
                 Ausgabe_Flaeche(a, b);
                 Ausgabe_Schwerpunkt(a, b);
                 Ausgabe_Flaechentragheitsmoment(a, b);
                 Volume_Ausgabe(a, b, c);
-
+                Ausgabe_Gewicht(a, b, c, m);
 
                 Console.WriteLine("Möchten Sie eine weitere Rechnung durchführen? y/n");
                 checkrestart = (Console.ReadKey().KeyChar == 'y');
@@ -62,7 +63,7 @@ namespace HSP_Sprint_1
 
             do
             {
-                Console.WriteLine("Bitte geben Sie Länge a ein.");
+                Console.WriteLine("Bitte geben Sie Länge a ein in cm.");
                 String eingabe_a = Console.ReadLine();
 
 
@@ -108,7 +109,7 @@ namespace HSP_Sprint_1
 
             do
             {
-                Console.WriteLine("Bitte geben Sie Länge b ein.");
+                Console.WriteLine("Bitte geben Sie Länge b ein in cm.");
                 String eingabe_b = Console.ReadLine();
                 try
                 {
@@ -142,7 +143,7 @@ namespace HSP_Sprint_1
             while (checkmate);
             return b;
         }
-
+        
         static double Eingabe_c()
         {
             double c = 0;
@@ -150,7 +151,7 @@ namespace HSP_Sprint_1
 
             do
             {
-                Console.WriteLine("Bitte geben Sie Länge c ein.");
+                Console.WriteLine("Bitte geben Sie Länge c ein in cm.");
                 String eingabe_c = Console.ReadLine();
 
                 try
@@ -184,26 +185,59 @@ namespace HSP_Sprint_1
             }
             while (checkmate);
             return c;
-
+            
         }
 
+        static double Eingabe_m()
+        {
+            double m = 0;
+            bool checkmate = true;
+
+            do
+            {
+                Console.WriteLine("Bitte wählen sie zwischen 1 für Stahl und 2 für Aluminium.");
+                Console.WriteLine(" Stahl beträgt 7.85 g/cm^3 und Aluminium 2.7g/cm^3");
+                String eingabe_m = Console.ReadLine();
+
+                try
+                {
+                    m = Convert.ToDouble(eingabe_m);
 
 
+                    // Siehe Z. 64
 
+                    if (m == 1)
+                    {
+                        checkmate = false;
+                        Console.WriteLine("Stahl gewählt");
+                        m = 7.85;
 
+                    }
+                    else if (m == 2)
+                    {
+                        checkmate = false;
+                        Console.WriteLine("Aluminium gewählt");
+                        m = 2.7;
 
+                    }
+                    else
+                    {
+                        checkmate = true;
+                        Console.WriteLine("Falsche Eingabe, bitte zwischen 1 und 2 wählen");
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Der eingegebene Wert ist keine Zahl. Bitte geben sie eine Zahl ein.");
+                }
 
+            }
+            while (checkmate);
+            return m;
 
+        }   
 
-
-
-
-
-
-
-
-
-        // Berechnungen
+            // Berechnungen
 
 
 
@@ -242,7 +276,14 @@ namespace HSP_Sprint_1
             return Iz;
         }
 
+        static double Gewicht_berechnen(double a, double b, double c, double m)
+        {
+            double Mass = a * b * c * m;
+            return Mass;
 
+
+
+        }
 
 
 
@@ -253,6 +294,14 @@ namespace HSP_Sprint_1
 
 
         // Ausgaben
+
+        static void Ausgabe_Gewicht(double a, double b, double c, double m)
+        {
+            Console.WriteLine("Gewicht ist:" + Gewicht_berechnen(a,b,c,m));
+
+
+        }
+
 
         static void Volume_Ausgabe(double a, double b, double c)
         {
@@ -279,17 +328,6 @@ namespace HSP_Sprint_1
             Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b));
             Console.WriteLine("Iyz = 0");
         }
-
-
-
-
-
-
-
-
-
-
-            
 
             
             
