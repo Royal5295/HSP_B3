@@ -28,7 +28,7 @@ namespace HSP_Sprint_1
                 c = Eingabe_c();                                //Lange c
                 m = Eingabe_m();                                // Material Auswahl
                 Ausgabe_Flaeche(a, b);
-                Ausgabe_Schwerpunkt(a, b);
+                Ausgabe_Schwerpunkt(a, b, c);
                 Ausgabe_Flaechentragheitsmoment(a, b);
                 Volume_Ausgabe(a, b, c);
                 Ausgabe_Gewicht(a, b, c, m);
@@ -250,6 +250,13 @@ namespace HSP_Sprint_1
             return y;
         }
 
+        static double Schwerpunkt_z_Rechteck_berechnen(double c)
+        {
+            double z = c / 2;
+            return z;
+
+        }
+
         static double Flaechentraegheitsmoment_Rechteck_Iy_berechnen(double a, double b)
         {
             double Iy = (b * (Math.Pow(a, 3))) / 12;
@@ -301,11 +308,12 @@ namespace HSP_Sprint_1
             Console.WriteLine("Die Fläche beträgt: " + Flaeche_berechnen(a, b)+ "cm^2 ");
           
         }
-        static void Ausgabe_Schwerpunkt(double a, double b)
+        static void Ausgabe_Schwerpunkt(double a, double b, double c)
         {
             Console.WriteLine("Der Schwerpunkt liegt bei:");
             Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a));
             Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b));
+            Console.WriteLine("z = " + Schwerpunkt_z_Rechteck_berechnen(c));
         }
 
         static void Ausgabe_Flaechentragheitsmoment(double a, double b)
