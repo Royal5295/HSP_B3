@@ -50,7 +50,7 @@ namespace HSP_Sprint_1
 
             do
             {
-                Console.WriteLine("Bitte geben Sie Länge a ein in cm.");
+                Console.WriteLine("Bitte geben Sie Länge a ein in mm.");
                 String eingabe_a = Console.ReadLine();
 
 
@@ -96,7 +96,7 @@ namespace HSP_Sprint_1
 
             do
             {
-                Console.WriteLine("Bitte geben Sie Länge b ein in cm.");
+                Console.WriteLine("Bitte geben Sie Länge b ein in mm.");
                 String eingabe_b = Console.ReadLine();
                 try
                 {
@@ -138,7 +138,7 @@ namespace HSP_Sprint_1
 
             do
             {
-                Console.WriteLine("Bitte geben Sie Länge c ein in cm.");
+                Console.WriteLine("Bitte geben Sie Länge c ein in mm.");
                 String eingabe_c = Console.ReadLine();
 
                 try
@@ -197,14 +197,14 @@ namespace HSP_Sprint_1
                     {
                         checkmate = false;
                         Console.WriteLine("Stahl gewählt.");
-                        m = 7.85;
+                        m = 7.85 / 1000;
 
                     }
                     else if (m == 2)
                     {
                         checkmate = false;
                         Console.WriteLine("Aluminium gewählt.");
-                        m = 2.7;
+                        m = 2.7 / 1000;
 
                     }
                     else
@@ -292,28 +292,28 @@ namespace HSP_Sprint_1
 
         static void Volume_Ausgabe(double a, double b, double c)
         {
-            Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c) + " cm^3");
+            Console.WriteLine("Volume ist:" + Volume_berechnen(a, b, c) + " mm^3");
 
         }
 
         static void Ausgabe_Flaeche(double a, double b)
         {
-            Console.WriteLine("Die Fläche beträgt: " + Flaeche_berechnen(a, b)+ "cm^2 ");
+            Console.WriteLine("Die Fläche beträgt: " + Flaeche_berechnen(a, b)+ "mm^2 ");
           
         }
         static void Ausgabe_Schwerpunkt(double a, double b)
         {
             Console.WriteLine("Der Schwerpunkt liegt bei:");
-            Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a));
-            Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b));
+            Console.WriteLine("x = " + Schwerpunkt_x_Rechteck_berechnen(a) + " mm");
+            Console.WriteLine("y = " + Schwerpunkt_y_Rechteck_berechnen(b) + " mm");
         }
 
         static void Ausgabe_Flaechentragheitsmoment(double a, double b)
         {
             Console.WriteLine("Das Flächenträgheitsmoment liegt bei:");
-            Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b) + "cm^4");
-            Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b) + "cm^4");
-            Console.WriteLine("Iyz = 0");
+            Console.WriteLine("Iy = " + Flaechentraegheitsmoment_Rechteck_Iy_berechnen(a, b) + "mm^4");
+            Console.WriteLine("Iz = " + Flaechentraegheitsmoment_Rechteck_Iz_berechnen(a, b) + "mm^4");
+            Console.WriteLine("Iyz = 0 mm^4");
         }
 
             
