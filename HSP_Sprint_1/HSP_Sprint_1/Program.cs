@@ -72,7 +72,7 @@ namespace HSP_Sprint_1
                         Console.WriteLine("Bitte keine negativen Werte eingeben.");
                     }
 
-                    else if ( a >=0)
+                    else if ( a >= 0)
                     {
                         checkmate = false;
 
