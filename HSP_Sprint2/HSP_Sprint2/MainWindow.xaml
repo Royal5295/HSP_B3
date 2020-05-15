@@ -5,17 +5,123 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HSP_Sprint2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="10,0,0,-16">
-        <TabControl Margin="287,0,0,148">
-            <TabItem Header="TabItem"/>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+        Title="Calculator" Height="514" Width="800" Background="#FF706C6C" VerticalAlignment="Center" HorizontalAlignment="Center" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15,10,0,-28" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <TabControl Margin="183,0,10,121">
+            <TabItem Header="rechteck"/>
+
+
+            <TabItem Header="shape 2"/>
+
+
+            <TabItem Header="shape 3">
+                <Grid Background="SeaGreen" />
+            </TabItem>
+
+
+            <TabItem Header="shape 4">
+                <Grid Background="#FFE5E5E5" />
+
             </TabItem>
         </TabControl>
-        <Label Content="Augabe" HorizontalAlignment="Left" Margin="287,339,0,0" VerticalAlignment="Top"/>
-        <Label Content="IXX" HorizontalAlignment="Left" Margin="287,370,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.622,0.502"/>
-        <Menu Margin="0,0,547,148"/>
+
+
+        <StackPanel x:Name="ausgaben1" Margin="0,258,10,0" HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
+
+            <Label Content="Volumen:" Target="{Binding ElementName=txtVolumen}" />
+            <TextBox Name="txtVolumen" />
+            <Label Content="IXX:" Target="{Binding ElementName=txtIXX}" />
+            <TextBox Name="txtIXX" />
+            <Label Content="WXX:" Target="{Binding ElementName=txtWXX}" />
+            <TextBox Name="txtWXX" />
+            <Label Content="content2:" Target="{Binding ElementName=txtcontent2}" />
+            <TextBox Name="txtcontent2" />
+
+
+        </StackPanel>
+
+
+
+
+
+
+        <StackPanel x:Name="ausgaben2" Margin="0,258,0,0" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
+
+            <Label Content="IYY:" Target="{Binding ElementName=txtIYY}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
+            <TextBox Name="txtIYY" />
+            <Label Content="Masse:" Target="{Binding ElementName=txtMasse}" />
+            <TextBox Name="txtMasse" />
+            <Label Content="WYY:" Target="{Binding ElementName=txtWYY}" />
+            <TextBox Name="txtWYY" />
+            <Label Content="content1:" Target="{Binding ElementName=txtcontent1}" />
+            <TextBox Name="txtcontent1" />
+
+
+        </StackPanel>
+
+        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
+
+            <Label Content="IZZ:" Target="{Binding ElementName=txtIZZ}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
+            <TextBox Name="txtIZZ" />
+            <Label Content="Flaeche:" Target="{Binding ElementName=txtFlaeche}" />
+            <TextBox Name="txtFlaeche" />
+            <Label Content="WZZ:" Target="{Binding ElementName=txtWZZ}" />
+            <TextBox Name="txtWZZ" />
+            <Label Content="content0:" Target="{Binding ElementName=txtcontent0}" />
+            <TextBox Name="txtcontent0" />
+
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+        <Grid x:Name="tabs" HorizontalAlignment="Center" Width="780" Grid.RowSpan="2" Margin="0,0,0,80" RenderTransformOrigin="0.499,0.355">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="79*"/>
+                <ColumnDefinition Width="77*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="Treeview" Margin="0,107,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB">
+                <TreeViewItem Header="Vollprofil" IsExpanded="True">
+                    <TreeViewItem Header="V shape 1" />
+                    <TreeViewItem Header="V shape 2" />
+                    <TreeViewItem Header="V shape 3" />
+                </TreeViewItem>
+                <TreeViewItem Header="Holzprofil" IsExpanded="True">
+                    <TreeViewItem Header="H shape 1" />
+                    <TreeViewItem Header="H shape 2" />
+                    <TreeViewItem Header="H shape 3" />
+                </TreeViewItem>
+                <TreeViewItem Header="Sonstiges" IsExpanded="True">
+                    <TreeViewItem Header="S shape 1" />
+                    <TreeViewItem Header="S shape 2" />
+
+                </TreeViewItem>
+            </TreeView>
+            <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
+
+        </Grid>
+        <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="168" Height="40"/>
+
+
+
+
+
+
+
+
+
+
 
 
     </Grid>
