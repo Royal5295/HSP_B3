@@ -16,6 +16,8 @@
             <TabItem Header="rechteck">
             <Label Content="rechteck profil" />
                 
+            
+
             </TabItem>
 
             <TabItem Header="shape 2">
@@ -44,8 +46,8 @@
             <TextBox x:Name="txtIXX" />
             <Label Content="WXX:" Target="{Binding ElementName=txtWXX}" />
             <TextBox x:Name="txtWXX" />
-            <Label Content="content2:" Target="{Binding ElementName=txtcontent2}" />
-            <TextBox x:Name="txtcontent2" />
+            <Label Content="SChwerpunktX:" Target="{Binding ElementName=txtScxhwerpunktX}" />
+            <TextBox x:Name="SchwerpunktX" />
 
 
         </StackPanel>
@@ -63,8 +65,8 @@
             <TextBox x:Name="txtMasse" />
             <Label Content="WYY:" Target="{Binding ElementName=txtWYY}" />
             <TextBox x:Name="txtWYY" />
-            <Label Content="content1:" Target="{Binding ElementName=txtcontent1}" />
-            <TextBox x:Name="txtcontent1" />
+            <Label Content="SchwerpunktY:" Target="{Binding ElementName=txtSChwerpunktY}" />
+            <TextBox x:Name="SchwerpunktY" />
 
 
         </StackPanel>
@@ -77,8 +79,8 @@
             <TextBox x:Name="txtFlaeche" />
             <Label Content="WZZ:" Target="{Binding ElementName=txtWZZ}" />
             <TextBox x:Name="txtWZZ" />
-            <Label Content="content0:" Target="{Binding ElementName=txtcontent0}" />
-            <TextBox x:Name="txtcontent0" />
+            <Label Content="Gewicht:" Target="{Binding ElementName=txtGewicht}" />
+            <TextBox x:Name="txtGewicht" />
 
 
         </StackPanel>
@@ -118,7 +120,7 @@
                 </TreeViewItem>
             </TreeView>
             <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
-            <Image HorizontalAlignment="Left" Height="102" Margin="215,56,0,0" VerticalAlignment="Top" Width="170"/>
+            
 
         </Grid>
         <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="168" Height="40"/>
