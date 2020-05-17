@@ -104,8 +104,8 @@
                     <Themes:BulletChrome/>
                 </AutomationProperties.LabeledBy>
                 <TreeViewItem Header="Vollprofil" IsExpanded="True">
-                    <TreeViewItem Header="V shape 1" />
-                    <TreeViewItem Header="V shape 2" />
+                    <TreeViewItem x:Name="V_shape_1" Header="V shape 1" />
+                    <TreeViewItem x:Name="v_shape_2" Header="V shape 2" />
                     <TreeViewItem Header="V shape 3" />
                 </TreeViewItem>
                 <TreeViewItem Header="Holzprofil" IsExpanded="True">
