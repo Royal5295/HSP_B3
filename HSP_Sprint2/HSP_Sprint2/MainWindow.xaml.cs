@@ -25,7 +25,22 @@ namespace HSP_Sprint2
             //InitializeComponent();
         }
 
+        double Ergebnis = 0;
+        double m = 0;
+        double a = 0;
+        double b = 0;
+        double c = 0;
 
+        static double Flaeche_berechnen(double a, double b)
+        {
+            double flaeche = a * b;
+            return flaeche;
+        }
+        static double Volume_berechnen(double a, double b, double c)
+        {
+            double volume = a * b * c;
+            return volume;
+        }
 
 
 
@@ -100,5 +115,14 @@ namespace HSP_Sprint2
         {
 
         }
+
+     /*   private void btn_Ergebnis_Rechteck(object sender, RoutedEventArgs e)
+        {
+            a = Convert.ToDouble(txtbox_rechteckprofil_l.Text);
+            b = Convert.ToDouble(txtbox_rechteckprofil_b.Text);
+            c = Convert.ToDouble(txtbox_rechteckprofil_h.Text);
+            
+            txtFlaeche.Text = (Ergebnis).ToString();
+        }*/
     }
 }
