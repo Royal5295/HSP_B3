@@ -56,7 +56,7 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Visible;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Hidden;
         }
 
@@ -65,7 +65,7 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Visible;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Hidden;
         }
 
@@ -74,16 +74,16 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Visible;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Hidden;
         }
 
-        private void Wellenprofil_selected(object sender, RoutedEventArgs e)
+        private void Rechteckrohrprofil_selected(object sender, RoutedEventArgs e)
         {
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Visible;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Visible;
             Tprofil_Grid.Visibility = Visibility.Hidden;
         }
 
@@ -92,7 +92,7 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Visible;
         }
 

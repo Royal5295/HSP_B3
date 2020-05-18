@@ -79,7 +79,7 @@
 
                 <TreeViewItem Header="Hohlprofil" IsExpanded="True">
                     <TreeViewItem  x:Name="Rohrprofil" Header="Rohrprofil" Selected="Rohrprofil_selected" />
-                    <TreeViewItem x:Name="Wellenprofil" Header="Wellenprofil" Selected="Wellenprofil_selected"/>
+                    <TreeViewItem x:Name="Rechteckrohrprofil" Header="Rechteckrohrprofil" Selected="Rechteckrohrprofil_selected"/>
                 </TreeViewItem>
 
 
@@ -122,7 +122,7 @@
             </ComboBox>
             <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
-            <Label Content="RechteckProfil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+            <Label Content="Rechteckprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
 
         </Grid>
 
@@ -146,37 +146,101 @@
                 <ComboBoxItem>Aluminium</ComboBoxItem>
                 <ComboBoxItem>kupfer</ComboBoxItem>
             </ComboBox>
-            <Label Content="RundProfil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+            <Label Content="Rundprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image x:Name="RundProfil_V" HorizontalAlignment="Left" Height="182" Margin="30,0,0,0" VerticalAlignment="Center" Width="254" Source="/RundProfil_V.jpeg" Stretch="UniformToFill"/>
         </Grid>
 
 
-        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_l"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="351,72,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rohrprofil_b"/>
+            <Label Content="Breite:" HorizontalAlignment="Left" Margin="351,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_d"/>
+            <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Rohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+            <Image HorizontalAlignment="Left" Height="192" Margin="33,46,0,0" VerticalAlignment="Top" Width="231" Source="/Rohrprofil_H.jpeg" Stretch="UniformToFill"/>
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Wellenprofil_Grid" Visibility="Hidden">
+        <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="#FF27A414" Offset="1"/>
+                    <GradientStop Color="#FFFDFEFD"/>
+                    <GradientStop Color="#FFECF5EC" Offset="0"/>
+                    <GradientStop Color="#FFECF5EC" Offset="0.012"/>
                 </LinearGradientBrush>
             </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l"/>
+            <Label Content="Breite:" HorizontalAlignment="Left" Margin="348,72,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckrohrprofil_b"/>
+            <Label Content="Hoehe:" HorizontalAlignment="Left" Margin="348,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_h"/>
+            <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" x:Name="txtbox_rechteckrohrprofil_d"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l_Copy"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,44,0,0" VerticalAlignment="Top"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="349,40,0,0" VerticalAlignment="Top"/>
+            <Label Content="Rechteckrohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
+            <Image x:Name="Rechteckrohrprofil_H" HorizontalAlignment="Left" Height="203" Margin="24,40,0,0" VerticalAlignment="Top" Width="269" Source="/Rechteckrohrprofil_H.jpeg" Stretch="UniformToFill"/>
+
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
+            <TextBox HorizontalAlignment="Left" Margin="407,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_BB"/>
+            <Label Content="Breite B:" HorizontalAlignment="Left" Margin="345,81,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_b"/>
+            <Label Content="Hoehe h:" HorizontalAlignment="Left" Margin="345,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_HH"/>
+            <Label Content="Hoehe H:" HorizontalAlignment="Left" Margin="345,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" x:Name="txtbox_Tprofil_d"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,81,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,109,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,138,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_Bb"/>
+            <Label Content="Breite b:" HorizontalAlignment="Left" Margin="345,47,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,50,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_L"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="345,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" />
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,160,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="T-profil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
+            <Image x:Name="T_profil_S" HorizontalAlignment="Left" Height="177" Margin="10,41,0,0" VerticalAlignment="Top" Width="269" Source="/Tprofil_S.jpeg" Stretch="UniformToFill"/>
         </Grid>
 
 
