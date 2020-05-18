@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="jadehs-logo.png" />
+    <None Remove="RechteckProfil_V.jpeg" />
+    <None Remove="Rechteckrohrprofil_H.jpeg" />
+    <None Remove="Rohrprofil_H.jpeg" />
+    <None Remove="RundProfil_V.jpeg" />
+    <None Remove="Tprofil_S.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="jadehs-logo.png" />
+    <Resource Include="RechteckProfil_V.jpeg" />
+    <Resource Include="Rechteckrohrprofil_H.jpeg" />
+    <Resource Include="Rohrprofil_H.jpeg" />
+    <Resource Include="RundProfil_V.jpeg" />
+    <Resource Include="Tprofil_S.jpeg" />
+  </ItemGroup>
+
+</Project>

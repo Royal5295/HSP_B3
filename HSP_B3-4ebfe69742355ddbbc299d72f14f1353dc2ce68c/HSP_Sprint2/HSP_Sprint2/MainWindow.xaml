@@ -1,0 +1,279 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HSP_Sprint2"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="HSP_Sprint2.MainWindow"
+        mc:Ignorable="d"
+        Title="Calculator" Height="514" Width="800" Background="#FF706C6C" VerticalAlignment="Center" HorizontalAlignment="Center" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15,10,0,-28" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel x:Name="ausgaben1" Margin="0,258,10,0" HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
+
+            <Label Content="Volumen:" Target="{Binding ElementName=txtVolumen}" />
+            <TextBox x:Name="txtVolumen" />
+            <Label Content="IXX:" Target="{Binding ElementName=txtIXX}" />
+            <TextBox x:Name="txtIXX" />
+            <Label Content="WXX:" Target="{Binding ElementName=txtWXX}" />
+            <TextBox x:Name="txtWXX" />
+            <Label Content="SChwerpunktX:" Target="{Binding ElementName=txtScxhwerpunktX}" />
+            <TextBox x:Name="SchwerpunktX" />
+
+
+        </StackPanel>
+
+
+
+
+
+
+        <StackPanel x:Name="ausgaben2" Margin="0,258,0,0" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
+
+            <Label Content="IYY:" Target="{Binding ElementName=txtIYY}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
+            <TextBox x:Name="txtIYY" />
+            <Label Content="Masse:" Target="{Binding ElementName=txtMasse}" />
+            <TextBox x:Name="txtMasse" />
+            <Label Content="WYY:" Target="{Binding ElementName=txtWYY}" />
+            <TextBox x:Name="txtWYY" />
+            <Label Content="SchwerpunktY:" Target="{Binding ElementName=txtSChwerpunktY}" />
+            <TextBox x:Name="SchwerpunktY" />
+
+
+        </StackPanel>
+
+        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
+
+            <Label Content="IZZ:" Target="{Binding ElementName=txtIZZ}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
+            <TextBox x:Name="txtIZZ" />
+            <Label Content="Flaeche:" Target="{Binding ElementName=txtFlaeche}" />
+            <TextBox x:Name="txtFlaeche" />
+            <Label Content="WZZ:" Target="{Binding ElementName=txtWZZ}" />
+            <TextBox x:Name="txtWZZ" />
+            <Label Content="Gewicht:" Target="{Binding ElementName=txtGewicht}" />
+            <TextBox x:Name="txtGewicht" />
+
+
+        </StackPanel>
+
+
+
+        <Grid x:Name="Page" HorizontalAlignment="Center" Width="780" Grid.RowSpan="2" Margin="0,0,0,80" RenderTransformOrigin="0.499,0.355">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="79*"/>
+                <ColumnDefinition Width="77*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="Profilauswahl" Margin="0,120,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
+                <Themes:BulletChrome/>
+
+                <TreeViewItem Header="Vollprofil" IsExpanded="True">
+                    <TreeViewItem x:Name="Rechteckprofil" Header="Rechteckprofil" Selected="Rechteckprofil_selected" />
+                    <TreeViewItem x:Name="Rundprofil" Header="Rundprofil" Selected="Rundprofil_selected" />
+                </TreeViewItem>
+
+
+                <TreeViewItem Header="Hohlprofil" IsExpanded="True">
+                    <TreeViewItem  x:Name="Rohrprofil" Header="Rohrprofil" Selected="Rohrprofil_selected" />
+                    <TreeViewItem x:Name="Rechteckrohrprofil" Header="Rechteckrohrprofil" Selected="Rechteckrohrprofil_selected"/>
+                </TreeViewItem>
+
+
+
+                <TreeViewItem Header="Sonstiges" IsExpanded="True">
+                    <TreeViewItem x:Name="Tprofil"  Header="T-profil" Selected="Tprofil_Selected"/>
+                </TreeViewItem>
+            </TreeView>
+
+
+
+            <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
+
+
+        </Grid>
+
+
+        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Hidden" >
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_l"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="346,68,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckprofil_b"/>
+            <Label Content="Breite:" HorizontalAlignment="Left" Margin="343,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_h"/>
+            <Label Content="Hohe:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
+            <Label Content="Rechteckprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Rechteckprofil" />
+
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid" Visibility="Hidden">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="403,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" x:Name="Txtbox_rundprofil_dm" />
+            <Label Content="Durchmesser:" HorizontalAlignment="Left" Margin="321,68,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="403,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged" x:Name="Txtbox_rundprofil_l" />
+            <Label Content="lange:" HorizontalAlignment="Left" Margin="356,0,0,0" VerticalAlignment="Center"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,0,0,0" VerticalAlignment="Center"/>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Rundprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+            <Image x:Name="RundProfil_V" HorizontalAlignment="Left" Height="182" Margin="30,0,0,0" VerticalAlignment="Center" Width="254" Source="/RundProfil_V.jpeg" Stretch="UniformToFill"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_rundprofil"/>
+        </Grid>
+
+
+        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Hidden">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_l"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="351,72,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rohrprofil_b"/>
+            <Label Content="Breite:" HorizontalAlignment="Left" Margin="351,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_d"/>
+            <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Rohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+            <Image HorizontalAlignment="Left" Height="192" Margin="33,46,0,0" VerticalAlignment="Top" Width="231" Source="/Rohrprofil_H.jpeg" Stretch="UniformToFill"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rohrprofil"/>
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFDFEFD"/>
+                    <GradientStop Color="#FFECF5EC" Offset="0"/>
+                    <GradientStop Color="#FFECF5EC" Offset="0"/>
+                    <GradientStop Color="#FFECF5EC" Offset="0.406"/>
+                    <GradientStop Color="#FFECF5EC" Offset="0.406"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l"/>
+            <Label Content="Breite:" HorizontalAlignment="Left" Margin="348,72,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckrohrprofil_b"/>
+            <Label Content="Hoehe:" HorizontalAlignment="Left" Margin="348,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_h"/>
+            <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" x:Name="txtbox_rechteckrohrprofil_d"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l_Copy"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,44,0,0" VerticalAlignment="Top"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="349,40,0,0" VerticalAlignment="Top"/>
+            <Label Content="Rechteckrohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
+            <Image x:Name="Rechteckrohrprofil_H" HorizontalAlignment="Left" Height="203" Margin="24,40,0,0" VerticalAlignment="Top" Width="269" Source="/Rechteckrohrprofil_H.jpeg" Stretch="UniformToFill"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rechteckrohrprofil"/>
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="407,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_BB"/>
+            <Label Content="Breite B:" HorizontalAlignment="Left" Margin="345,81,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_b"/>
+            <Label Content="Hoehe h:" HorizontalAlignment="Left" Margin="345,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_HH"/>
+            <Label Content="Hoehe H:" HorizontalAlignment="Left" Margin="345,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" x:Name="txtbox_Tprofil_d"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,81,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,109,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,138,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_Bb"/>
+            <Label Content="Breite b:" HorizontalAlignment="Left" Margin="345,47,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,50,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_L"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="345,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" />
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,160,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="T-profil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
+            <Image x:Name="T_profil_S" HorizontalAlignment="Left" Height="177" Margin="10,41,0,0" VerticalAlignment="Top" Width="269" Source="/Tprofil_S.jpeg" Stretch="UniformToFill"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Tprofil" />
+        </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+
+
+
+
+
+
+
+
+</Window>
