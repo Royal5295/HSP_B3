@@ -105,11 +105,11 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_l"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="346,68,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckprofil_b"/>
             <Label Content="Breite:" HorizontalAlignment="Left" Margin="343,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_h"/>
             <Label Content="Hohe:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
@@ -126,16 +126,16 @@
 
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="403,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" />
+            <TextBox HorizontalAlignment="Left" Margin="403,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" x:Name="Txtbox_rundprofil_dm" />
             <Label Content="Durchmesser:" HorizontalAlignment="Left" Margin="321,68,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="403,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged" />
+            <TextBox HorizontalAlignment="Left" Margin="403,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged" x:Name="Txtbox_rundprofil_l" />
             <Label Content="lange:" HorizontalAlignment="Left" Margin="356,0,0,0" VerticalAlignment="Center"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,0,0,0" VerticalAlignment="Center"/>
