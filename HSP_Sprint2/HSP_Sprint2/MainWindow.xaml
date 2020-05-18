@@ -12,31 +12,7 @@
             <RowDefinition Height="67*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <TabControl x:Name="rechteck_tab" Margin="183,0,10,121" Background="White">
-            <TabItem Header="rechteck">
-            <Label Content="rechteck profil" />
-                
-            
-
-            </TabItem>
-
-            <TabItem Header="shape 2">
-                <Label Content="Content goes here..." />
-            </TabItem>
-
-            <TabItem Header="shape 3">
-                <Grid Background="SeaGreen" />
-                
-                
-            </TabItem>
-
-
-            <TabItem Header="shape 4">
-                <Grid Background="#FFE5E5E5" />
-
-            </TabItem>
-        </TabControl>
-
+      
 
         <StackPanel x:Name="ausgaben1" Margin="0,258,10,0" HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
 
@@ -94,36 +70,94 @@
 
 
 
-        <Grid x:Name="tabs" HorizontalAlignment="Center" Width="780" Grid.RowSpan="2" Margin="0,0,0,80" RenderTransformOrigin="0.499,0.355">
+        <Grid x:Name="Page" HorizontalAlignment="Center" Width="780" Grid.RowSpan="2" Margin="0,0,0,80" RenderTransformOrigin="0.499,0.355">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="77*"/>
             </Grid.ColumnDefinitions>
-            <TreeView x:Name="Treeview" Margin="0,107,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
-                <AutomationProperties.LabeledBy>
-                    <Themes:BulletChrome/>
-                </AutomationProperties.LabeledBy>
-                <TreeViewItem Header="Vollprofil" IsExpanded="True">
-                    <TreeViewItem x:Name="V_shape_1" Header="V shape 1" />
-                    <TreeViewItem x:Name="v_shape_2" Header="V shape 2" />
-                    <TreeViewItem Header="V shape 3" />
-                </TreeViewItem>
-                <TreeViewItem Header="Holzprofil" IsExpanded="True">
-                    <TreeViewItem Header="H shape 1" />
-                    <TreeViewItem Header="H shape 2" />
-                    <TreeViewItem Header="H shape 3" />
-                </TreeViewItem>
-                <TreeViewItem Header="Sonstiges" IsExpanded="True">
-                    <TreeViewItem Header="S shape 1" />
-                    <TreeViewItem Header="S shape 2" />
-
+            <TreeView x:Name="Profilauswahl" Margin="0,120,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
+                <Themes:BulletChrome/>
+               
+            <TreeViewItem Header="Vollprofil" IsExpanded="True">
+                    <TreeViewItem x:Name="Rechteckprofil" Header="Rechteckprofil" Selected="Rechteckprofil_selected" />
+                    <TreeViewItem x:Name="Rundprofil" Header="Rundprofil" Selected="Rundprofil_selected" />
+            </TreeViewItem>
+                
+                
+            <TreeViewItem Header="Hohlprofil" IsExpanded="True">
+                    <TreeViewItem  x:Name="Rohrprofil" Header="Rohrprofil" Selected="Rohrprofil_selected" />
+                    <TreeViewItem x:Name="Wellenprofil" Header="Wellenprofil" Selected="Wellenprofil_selected"/>
+            </TreeViewItem>
+                
+                
+                
+            <TreeViewItem Header="Sonstiges" IsExpanded="True">
+                    <TreeViewItem x:Name="Tprofil"  Header="T-profil" Selected="Tprofil_Selected"/>
                 </TreeViewItem>
             </TreeView>
-            <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
+            
+            
+            
+    <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
             
 
         </Grid>
         <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="168" Height="40"/>
+
+
+        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" >
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF121C5B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image x:Name="RechteckProfil" HorizontalAlignment="Left" Height="100" Margin="94,68,0,0" VerticalAlignment="Top" Width="100" Source="/Rechteckoprofil.jpeg"/>
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFAC0F0F" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Wellenprofil_Grid">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF27A414" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+
+
+
+
+
+
+
 
 
 
