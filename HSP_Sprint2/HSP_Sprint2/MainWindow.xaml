@@ -12,7 +12,7 @@
             <RowDefinition Height="67*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-      
+
 
         <StackPanel x:Name="ausgaben1" Margin="0,258,10,0" HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
 
@@ -63,13 +63,6 @@
 
 
 
-
-
-
-
-
-
-
         <Grid x:Name="Page" HorizontalAlignment="Center" Width="780" Grid.RowSpan="2" Margin="0,0,0,80" RenderTransformOrigin="0.499,0.355">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="79*"/>
@@ -77,54 +70,80 @@
             </Grid.ColumnDefinitions>
             <TreeView x:Name="Profilauswahl" Margin="0,120,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
                 <Themes:BulletChrome/>
-               
-            <TreeViewItem Header="Vollprofil" IsExpanded="True">
+
+                <TreeViewItem Header="Vollprofil" IsExpanded="True">
                     <TreeViewItem x:Name="Rechteckprofil" Header="Rechteckprofil" Selected="Rechteckprofil_selected" />
                     <TreeViewItem x:Name="Rundprofil" Header="Rundprofil" Selected="Rundprofil_selected" />
-            </TreeViewItem>
-                
-                
-            <TreeViewItem Header="Hohlprofil" IsExpanded="True">
+                </TreeViewItem>
+
+
+                <TreeViewItem Header="Hohlprofil" IsExpanded="True">
                     <TreeViewItem  x:Name="Rohrprofil" Header="Rohrprofil" Selected="Rohrprofil_selected" />
                     <TreeViewItem x:Name="Wellenprofil" Header="Wellenprofil" Selected="Wellenprofil_selected"/>
-            </TreeViewItem>
-                
-                
-                
-            <TreeViewItem Header="Sonstiges" IsExpanded="True">
+                </TreeViewItem>
+
+
+
+                <TreeViewItem Header="Sonstiges" IsExpanded="True">
                     <TreeViewItem x:Name="Tprofil"  Header="T-profil" Selected="Tprofil_Selected"/>
                 </TreeViewItem>
             </TreeView>
-            
-            
-            
-    <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
-            
+
+
+
+            <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
+
 
         </Grid>
         <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="168" Height="40"/>
 
 
-        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" >
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="#FF121C5B" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <Image x:Name="RechteckProfil" HorizontalAlignment="Left" Height="100" Margin="94,68,0,0" VerticalAlignment="Top" Width="100" Source="/Rechteckoprofil.jpeg"/>
-        </Grid>
-
-        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid">
+        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Visible" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Lange:" HorizontalAlignment="Left" Margin="346,68,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110"/>
+            <Label Content="Bereite:" HorizontalAlignment="Left" Margin="343,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Hohe:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem>Stahl</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
+                <ComboBoxItem>Aluminium</ComboBoxItem>
+                <ComboBoxItem>kupfer</ComboBoxItem>
+            </ComboBox>
+            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
+            <Label Content="RechteckProfil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
+
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid">
+        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid" Visibility="Hidden">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBox HorizontalAlignment="Left" Margin="433,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" />
+            <Label Content="Durchmesser:" HorizontalAlignment="Left" Margin="346,52,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="433,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" />
+            <Label Content="lange:" HorizontalAlignment="Left" Margin="386,93,0,0" VerticalAlignment="Top"/>
+            <Image Source="Rechteckprofil.jpg" Margin="-124,34,208,34"/>
+            <Label Content="Rundprofil" HorizontalAlignment="Left" Margin="27,6,0,0" VerticalAlignment="Top" Width="157" FontWeight="Bold" FontSize="16" FontFamily="Arial"/>
+
+        </Grid>
+
+
+        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -133,7 +152,7 @@
             </Grid.Background>
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Wellenprofil_Grid">
+        <Grid Margin="194,10,10,128" x:Name="Wellenprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -142,13 +161,14 @@
             </Grid.Background>
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
+
         </Grid>
 
 

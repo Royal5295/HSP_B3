@@ -95,5 +95,10 @@ namespace HSP_Sprint2
             Wellenprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Visible;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

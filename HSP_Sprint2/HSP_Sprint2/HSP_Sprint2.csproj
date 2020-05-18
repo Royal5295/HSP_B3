@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <None Remove="jadehs-logo.png" />
+    <None Remove="RechteckProfil_V.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="jadehs-logo.png" />
+    <Resource Include="RechteckProfil_V.jpeg" />
   </ItemGroup>
 
 </Project>
