@@ -71,8 +71,16 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Visible;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Hidden;
+            btn_brechnung_Rechteckprofil.Visibility = Visibility.Visible;
+            btn_brechnung_rundprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rohrprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rechteckrohrprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_Tprofil.Visibility = Visibility.Hidden;
+
+
+
         }
 
         private void Rundprofil_selected(object sender, RoutedEventArgs e)
@@ -80,8 +88,13 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Visible;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Hidden;
+            btn_brechnung_Rechteckprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_rundprofil.Visibility = Visibility.Visible;
+            btn_berechnung_rohrprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rechteckrohrprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_Tprofil.Visibility = Visibility.Hidden;
         }
 
         private void Rohrprofil_selected(object sender, RoutedEventArgs e)
@@ -89,17 +102,27 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Visible;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Hidden;
+            btn_brechnung_Rechteckprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_rundprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rohrprofil.Visibility = Visibility.Visible;
+            btn_berechnung_rechteckrohrprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_Tprofil.Visibility = Visibility.Hidden;
         }
 
-        private void Wellenprofil_selected(object sender, RoutedEventArgs e)
+        private void Rechteckrohrprofil_selected(object sender, RoutedEventArgs e)
         {
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Visible;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Visible;
             Tprofil_Grid.Visibility = Visibility.Hidden;
+            btn_brechnung_Rechteckprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_rundprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rohrprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rechteckrohrprofil.Visibility = Visibility.Visible;
+            btn_brechnung_Tprofil.Visibility = Visibility.Hidden;
         }
 
         private void Tprofil_Selected(object sender, RoutedEventArgs e)
@@ -107,8 +130,13 @@ namespace HSP_Sprint2
             RechteckProfil_Grid.Visibility = Visibility.Hidden;
             Rundprofil_Grid.Visibility = Visibility.Hidden;
             Rohrprofil_Grid.Visibility = Visibility.Hidden;
-            Wellenprofil_Grid.Visibility = Visibility.Hidden;
+            Rechteckrohrprofil_Grid.Visibility = Visibility.Hidden;
             Tprofil_Grid.Visibility = Visibility.Visible;
+            btn_brechnung_Rechteckprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_rundprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rohrprofil.Visibility = Visibility.Hidden;
+            btn_berechnung_rechteckrohrprofil.Visibility = Visibility.Hidden;
+            btn_brechnung_Tprofil.Visibility = Visibility.Visible;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
