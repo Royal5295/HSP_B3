@@ -52,7 +52,7 @@
             <Label Content="IZZ:" Target="{Binding ElementName=txtIZZ}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtIZZ" />
             <Label Content="Flaeche:" Target="{Binding ElementName=txtFlaeche}" />
-            <TextBox x:Name="txtFlaeche"  />
+            <TextBox x:Name="txtFlaeche" />
             <Label Content="WZZ:" Target="{Binding ElementName=txtWZZ}" />
             <TextBox x:Name="txtWZZ" />
             <Label Content="Gewicht:" Target="{Binding ElementName=txtGewicht}" />
@@ -96,17 +96,9 @@
 
         </Grid>
         <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="168" Height="40"/>
-        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Visible">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-        </Grid>
 
 
-        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Visible" >
+        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Hidden" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -156,6 +148,16 @@
             </ComboBox>
             <Label Content="RundProfil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image x:Name="RundProfil_V" HorizontalAlignment="Left" Height="182" Margin="30,0,0,0" VerticalAlignment="Center" Width="254" Source="/RundProfil_V.jpeg" Stretch="UniformToFill"/>
+        </Grid>
+
+
+        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Visible">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
         </Grid>
 
         <Grid Margin="194,10,10,128" x:Name="Wellenprofil_Grid" Visibility="Hidden">
