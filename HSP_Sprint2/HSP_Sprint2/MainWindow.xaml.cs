@@ -100,5 +100,89 @@ namespace HSP_Sprint2
         {
 
         }
+
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+           {
+                double zahl1 = double.Parse(txtbox_rechteckprofil_l.Text);
+                double zahl2 = double.Parse(txtbox_rechteckprofil_b.Text);
+                double zahl3 = double.Parse(txtbox_rechteckprofil_h.Text);
+                txtVolumen.Text = (berechnungVolumen(zahl1, zahl2, zahl3) + "mm³");
+
+              
+
+               
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Error!!! Bitte keine Buchstaben eingeben!");
+            }
+
+           
+
+
+
+
+
+        }
+        public double berechnungVolumen(double zahl1, double zahl2, double zahl3)
+        {
+            double Volumen = zahl1 * zahl2 * zahl3;
+            bool checkmate = true;
+            
+            do
+            {
+
+
+
+
+
+                if (Volumen == 0)
+                {
+                   checkmate = true;
+                    MessageBox.Show("Fehler nicht mit 0 Multiplizieren");
+
+                    checkmate = false;
+                    Volumen = 0;
+                   // break;
+                }
+                else if (Volumen <= 0)
+                {
+                    
+                    checkmate = true;
+                    MessageBox.Show(" Fehler keine neg. Werte");
+                    checkmate = false;
+                    Volumen = 0;
+                    string ErMessage = ("Eine beliebige Nachricht"+ "");
+                    txtVolumen.Text = ErMessage + "";
+
+
+
+                    //break;
+                }
+                else if (Volumen >= 0)
+                {
+                    checkmate = false;
+                   
+                }
+            }
+            while (checkmate);
+            return Volumen;
+        }
+
+        
+             
+        
+               
+            
+     
+                
+               
+            
+            
+        
+
     }
 }
