@@ -195,8 +195,7 @@ namespace HSP_Sprint2
         {
           try
             {
-                double Durchmesser = double.Parse(txtbox_rundprofil_d.Text);
-                double Durchmesser = double.Parse(txtbox_rundprofil_l.Text);
+               
 
             }
 
