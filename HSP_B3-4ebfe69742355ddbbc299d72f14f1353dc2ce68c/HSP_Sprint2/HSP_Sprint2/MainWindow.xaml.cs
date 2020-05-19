@@ -128,7 +128,7 @@ namespace HSP_Sprint2
         {
 
         }
-
+        // Rechteckprofil Ausfuehrung Berechnung
         public void btn_brechnung_Rechteckprofil_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -254,12 +254,24 @@ namespace HSP_Sprint2
             return IYY;
         }
 
+        
 
 
-        private void btn_brechnung_rundprofil_Click(object sender, RoutedEventArgs e)
+        // Rundprofil Ausfuehrung Berechnung
+        public void btn_brechnung_rundprofil_Click(object sender, RoutedEventArgs e)
         {
+          try
+            {
+                double Durchmesser = double.Parse(txtbox_rundprofil_d.Text);
+                double Durchmesser = double.Parse(txtbox_rundprofil_l.Text);
 
+            }
 
+            catch (FormatException)
+            {
+
+                MessageBox.Show("Error! Keine Buchstaben eingeben!");
+            }
 
 
 
