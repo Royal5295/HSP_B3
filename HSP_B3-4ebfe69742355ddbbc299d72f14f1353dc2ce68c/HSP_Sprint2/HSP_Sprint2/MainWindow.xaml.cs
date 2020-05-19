@@ -626,7 +626,7 @@ namespace HSP_Sprint2
                        
                     }
 
-                    if (Breite_b <= 0) ;
+                    if (Breite_b <= 0) 
                     {
                         checkmate = true;
                         MessageBox.Show("Breite b muss größer als 0 sein!");
@@ -650,7 +650,7 @@ namespace HSP_Sprint2
                         Laenge_l = 0;
                     }
 
-                    if (Hoehe_h <=0)
+                    if (Hoehe_h <= 0)
                     {
                         checkmate = true;
                         MessageBox.Show("Höhe h muss größer als 0 sein!");
