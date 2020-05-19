@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Thomas\\.nuget\\packages\\": {}
+    "C:\\Users\\Niko Buelmann\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thomas\\source\\repos\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
+      "projectUniqueName": "C:\\Users\\Niko Buelmann\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
       "projectName": "HSP_Sprint2",
-      "projectPath": "C:\\Users\\Thomas\\source\\repos\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
-      "packagesPath": "C:\\Users\\Thomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thomas\\source\\repos\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\obj\\",
+      "projectPath": "C:\\Users\\Niko Buelmann\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
+      "packagesPath": "C:\\Users\\Niko Buelmann\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Niko Buelmann\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Niko Buelmann\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -129,38 +129,129 @@ namespace HSP_Sprint2
 
         }
 
-
-
-
-
-        private void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
+        public void btn_brechnung_Rechteckprofil_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
+                double Breite = double.Parse(txtbox_rechteckprofil_b.Text);
+                double Hoehe = double.Parse(txtbox_rechteckprofil_h.Text);
+                double Laenge = double.Parse(txtbox_rechteckprofil_l.Text);
+                txtVolumen.Text = (berechnungVolumen(Breite, Hoehe, Laenge) + "mm³");
+                txtIXX.Text = (berechnungIXX(Breite, Hoehe) + "mm^4");
+                txtIYY.Text = (berechnungIYY(Breite, Hoehe) + "mm^4");
+            }
+
+            catch (FormatException)
+            {
+
+                MessageBox.Show("Error! Keine Buchstaben eingeben!");
+            }
+
 
         }
 
-
-
-
-
-        private void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
+        public double berechnungVolumen(double Breite, double Hoehe, double Laenge)
         {
+            double Volumen = Breite * Hoehe * Laenge;
+            bool checkmate = false;
 
 
+            do
+            {
+                if (Volumen == 0)
+                {
+                    checkmate = true;
+                    MessageBox.Show("Werte müssen größer als 0 sein!");
 
+                    checkmate = false;
+                    Volumen = 0;
 
+                }
+                else if (Volumen <= 0)
+                {
+                    checkmate = true;
+                    MessageBox.Show("Werte müssen größer als 0 sein!");
 
+                    checkmate = false;
+                    Volumen = 0;
+
+                }
+
+                
+
+            }
+
+            while (checkmate);
+            return Volumen;
         }
 
+       public double berechnungIXX(double Breite, double Hoehe)
+        { 
+            double IXX = (Breite * (Math.Pow(Hoehe, 3)) / 12 );
+            bool checkmate = false;
+
+            do
+            {
+                if (IXX == 0)
+                {
+                    checkmate = true;
+                    MessageBox.Show("Werte müssen größer als 0 sein!");
+
+                    checkmate = false;
+                    IXX = 0;
+
+                }
+                else if (IXX <= 0)
+                {
+                    checkmate = true;
+                    MessageBox.Show("Werte müssen größer als 0 sein!");
+
+                    checkmate = false;
+                    IXX = 0;
+
+                }
 
 
-        private void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
+
+            }
+
+            while (checkmate);
+            return IXX;
+        }
+
+        public double berechnungIYY(double Breite, double Hoehe)
         {
+            double IYY = (Hoehe * (Math.Pow(Breite, 3)) / 12);
+            bool checkmate = false;
+
+            do
+            {
+                if (IYY == 0)
+                {
+                    checkmate = true;
+                    MessageBox.Show("Werte müssen größer als 0 sein!");
+
+                    checkmate = false;
+                    IYY = 0;
+
+                }
+                else if (IYY <= 0)
+                {
+                    checkmate = true;
+                    MessageBox.Show("Werte müssen größer als 0 sein!");
+
+                    checkmate = false;
+                    IYY = 0;
+
+                }
 
 
 
+            }
 
-
-
+            while (checkmate);
+            return IYY;
         }
 
 
@@ -175,10 +266,18 @@ namespace HSP_Sprint2
 
         }
 
+        private void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
+        {
 
 
 
-        private void btn_brechnung_Rechteckprofil_Click(object sender, RoutedEventArgs e)
+
+
+
+        }
+
+
+        private void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -186,6 +285,31 @@ namespace HSP_Sprint2
 
 
         }
+
+        private void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+        }
+
+
+
+
+
+       
+
+
+      
+
+
+
+        
+
+
+
+
+       
 
 
 
