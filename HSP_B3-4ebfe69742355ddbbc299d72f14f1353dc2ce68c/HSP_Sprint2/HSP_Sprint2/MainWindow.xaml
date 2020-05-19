@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
 
 
+
         <StackPanel x:Name="ausgaben1" Margin="0,258,10,0" HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
 
             <Label Content="Volumen:" Target="{Binding ElementName=txtVolumen}" />
@@ -27,11 +28,6 @@
 
 
         </StackPanel>
-
-
-
-
-
 
         <StackPanel x:Name="ausgaben2" Margin="0,258,0,0" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
 
@@ -61,30 +57,38 @@
 
         </StackPanel>
 
+        <Grid Margin="194,10,10,128" x:Name="Homepage" Visibility="Visible">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Gray" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label Content="HSP-B3 Profile-calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" Width="493" FontWeight="Light" FontSize="25" Margin="10,10,0,0" Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,72,0,0" Text="Bitte wählen Sie Ihr Profil aus und geben Sie die Maße ein.&#x0a;Mit `Calculate' können Sie alle relevanten Werte berechnen." TextWrapping="Wrap" VerticalAlignment="Top" Height="82" Width="440" FontSize="16" Foreground="White"/>
 
+        </Grid>
 
         <Grid x:Name="Page" HorizontalAlignment="Center" Width="780" Grid.RowSpan="2" Margin="0,0,0,80" RenderTransformOrigin="0.499,0.355">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="77*"/>
             </Grid.ColumnDefinitions>
+            
             <TreeView x:Name="Profilauswahl" Margin="0,120,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
                 <Themes:BulletChrome/>
 
-                <TreeViewItem Header="Vollprofil" IsExpanded="True">
+                <TreeViewItem Header="Vollprofil" IsExpanded="False">
                     <TreeViewItem x:Name="Rechteckprofil" Header="Rechteckprofil" Selected="Rechteckprofil_selected" />
                     <TreeViewItem x:Name="Rundprofil" Header="Rundprofil" Selected="Rundprofil_selected" />
                 </TreeViewItem>
 
-
-                <TreeViewItem Header="Hohlprofil" IsExpanded="True">
+                <TreeViewItem Header="Hohlprofil" IsExpanded="False">
                     <TreeViewItem  x:Name="Rohrprofil" Header="Rohrprofil" Selected="Rohrprofil_selected" />
                     <TreeViewItem x:Name="Rechteckrohrprofil" Header="Rechteckrohrprofil" Selected="Rechteckrohrprofil_selected"/>
                 </TreeViewItem>
 
-
-
-                <TreeViewItem Header="Sonstiges" IsExpanded="True">
+                <TreeViewItem Header="Sonstiges" IsExpanded="False">
                     <TreeViewItem x:Name="Tprofil"  Header="T-profil" Selected="Tprofil_Selected"/>
                 </TreeViewItem>
             </TreeView>
@@ -227,7 +231,7 @@
 
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -268,32 +272,7 @@
 
         </Grid>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </Grid>
-
-
-
-
-
-
 
 
 </Window>
