@@ -97,7 +97,7 @@
         </Grid>
 
 
-        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Hidden" >
+        <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Visible" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -122,7 +122,7 @@
             <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
             <Label Content="Rechteckprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
-            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Rechteckprofil" />
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Rechteckprofil" Click="btn_brechnung_Rechteckprofil_Click" />
 
         </Grid>
 
@@ -148,7 +148,7 @@
             </ComboBox>
             <Label Content="Rundprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image x:Name="RundProfil_V" HorizontalAlignment="Left" Height="182" Margin="30,0,0,0" VerticalAlignment="Center" Width="254" Source="/RundProfil_V.jpeg" Stretch="UniformToFill"/>
-            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_rundprofil"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_rundprofil" Click="btn_brechnung_rundprofil_Click"/>
         </Grid>
 
 
@@ -177,7 +177,7 @@
             </ComboBox>
             <Label Content="Rohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image HorizontalAlignment="Left" Height="192" Margin="33,46,0,0" VerticalAlignment="Top" Width="231" Source="/Rohrprofil_H.jpeg" Stretch="UniformToFill"/>
-            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rohrprofil"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rohrprofil" Click="btn_berechnung_rohrprofil_Click"/>
         </Grid>
 
         <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
@@ -211,10 +211,10 @@
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="349,40,0,0" VerticalAlignment="Top"/>
             <Label Content="Rechteckrohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
             <Image x:Name="Rechteckrohrprofil_H" HorizontalAlignment="Left" Height="203" Margin="24,40,0,0" VerticalAlignment="Top" Width="269" Source="/Rechteckrohrprofil_H.jpeg" Stretch="UniformToFill"/>
-            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rechteckrohrprofil"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rechteckrohrprofil" Click="btn_berechnung_rechteckrohrprofil_Click"/>
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -245,7 +245,8 @@
             <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Label Content="T-profil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
             <Image x:Name="T_profil_S" HorizontalAlignment="Left" Height="177" Margin="10,41,0,0" VerticalAlignment="Top" Width="269" Source="/Tprofil_S.jpeg" Stretch="UniformToFill"/>
-            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Tprofil" />
+            
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Tprofil" Click="btn_brechnung_Tprofil_Click" Visibility="Visible" />
         </Grid>
 
 
