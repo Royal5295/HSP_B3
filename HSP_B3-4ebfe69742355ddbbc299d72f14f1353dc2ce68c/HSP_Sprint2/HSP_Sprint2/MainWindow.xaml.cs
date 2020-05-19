@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -359,9 +360,9 @@ namespace HSP_Sprint2
             return SchwerpunktX;
         }
 
-        //Rundprofil Ausführung Berechnung
+        //Rohrprofil Ausführung Berechnung
 
-        private void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
+        public void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
         {
            
                 double Stahl;
@@ -392,17 +393,30 @@ namespace HSP_Sprint2
                             checkmate = false;
                             Laenge = 0;
                             Durchmesser = 0;
+                            Dicke = 0;
+
                         }
 
-                        txtVolumen.Text = (berechnungVolumen_Rundprofil(Durchmesser, Laenge) + "mm³");
-                        txtIXX.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
-                        txtIYY.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
-                        txtWXX.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
-                        txtWYY.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
-                        //txtGewicht.Text = (berechnungGewicht(Durchmesser, Laenge, Sorte) + "g");
-                        SchwerpunktX.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
-                        SchwerpunktY.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
+                        if (Dicke <=0)
+                        {
+                        checkmate = true;
+                        MessageBox.Show("Dicke muss größer als 0 sein!");
+                        checkmate = false;
+                        Dicke = 0;
+                        Durchmesser = 0;
+                        Laenge = 0;
+                        }
 
+               
+
+                        txtVolumen.Text = (berechnungVolumen_Rohrprofil(Durchmesser, Dicke, Laenge) + "mm³");
+                        txtIXX.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                        txtIYY.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                        txtWXX.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                        txtWYY.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                        //txtGewicht.Text = (berechnungGewicht(Durchmesser, Dicke, Laenge, Volumen, Sorte) + "g");
+                        SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
+                        SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
 
                     }
 
@@ -414,18 +428,110 @@ namespace HSP_Sprint2
                 }
                 while (checkmate);
             
+        }
+        // Berechnung
+        public double berechnungVolumen_Rohrprofil(double Durchmesser, double Dicke, double Laenge)
+        {
+            double Volumen_Rohrprofil = (((Math.PI * Math.Pow(Durchmesser, 2)) / 4) - ((Math.PI * Math.Pow((Durchmesser - (2 * Dicke)), 2)) / 4)) * Laenge;
 
 
-
-
-
-
+            return Volumen_Rohrprofil;
         }
 
+        public double berechnungIXX_Rohrprofil(double Durchmesser, double Dicke)
+        {
+            double IXX_Rohrprofil = (Math.PI * (Math.Pow(Durchmesser, 4)) - (Math.Pow((Durchmesser - (2 * Dicke)), 4))) / 64;
 
+            return IXX_Rohrprofil;
+        }
+
+        public double berechnungWXX_Rohrprofil(double Durchmesser, double Dicke)
+        {
+            double WXX_Rohrprofil = (Math.PI * (Math.Pow(Durchmesser, 4)) - (Math.Pow((Durchmesser - (2 * Dicke)), 4))) / 32;
+
+            return WXX_Rohrprofil;
+        }
+
+        /*public double berechnungGewicht_Rohrprofil(double Durchmesser, double Dicke, double Laenge, double Volumen, Material)
+        {
+            double Geweicht_Rohrprofil = Volumen * Material
+
+            return Geweicht_Rohrprofil;
+        }
+        */
+
+        public double berechnungSchwerpunktX_Rohrprofil(double Durchmesser)
+        {
+            double SchwerpunktX = Durchmesser / 2;
+
+            return SchwerpunktX;
+        }
+
+        // Rechteckrohr Ausführung Berechnung
         private void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
         {
+            double Stahl;
+            bool checkmate = false;
+            do
+            {
+                try
+                {
 
+                    double Durchmesser = double.Parse(txtbox_rohrprofil_dm.Text);
+                    double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
+                    double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
+
+                    if (Durchmesser <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Breite muss größer als 0 sein!");
+                        checkmate = false;
+                        Durchmesser = 0;
+                        Laenge = 0;
+                        Dicke = 0;
+                    }
+
+                    if (Laenge <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Laenge muss größer als 0 sein!");
+                        checkmate = false;
+                        Laenge = 0;
+                        Durchmesser = 0;
+                        Dicke = 0;
+
+                    }
+
+                    if (Dicke <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Dicke muss größer als 0 sein!");
+                        checkmate = false;
+                        Dicke = 0;
+                        Durchmesser = 0;
+                        Laenge = 0;
+                    }
+
+
+
+                    txtVolumen.Text = (berechnungVolumen_Rohrprofil(Durchmesser, Dicke, Laenge) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                    txtIYY.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                    txtWXX.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                    txtWYY.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht(Durchmesser, Dicke, Laenge, Volumen, Sorte) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
+                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
+
+                }
+
+                catch (FormatException)
+                {
+
+                    MessageBox.Show("Error! Keine Buchstaben eingeben!");
+                }
+            }
+            while (checkmate);
 
 
 
