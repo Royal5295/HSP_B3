@@ -1,19 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace HSP_Sprint2
 {
@@ -365,8 +352,7 @@ namespace HSP_Sprint2
 
         public void btn_berechnung_Rohrprofil_Click(object sender, RoutedEventArgs e)
         {
-           
-                double Stahl;
+         
                 bool checkmate = false;
                 do
                 {
@@ -471,7 +457,7 @@ namespace HSP_Sprint2
         // Rechteckrohr Ausführung Berechnung
         public void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
         {
-            double Stahl;
+
             bool checkmate = false;
             do
             {
@@ -480,8 +466,8 @@ namespace HSP_Sprint2
 
                     double Breite = double.Parse(txtbox_rechteckrohrprofil_b.Text);
                     double Hoehe = double.Parse(txtbox_rechteckrohrprofil_h.Text);
-                    double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
-                    double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
+                    double Laenge = double.Parse(txtbox_rechteckrohrprofil_l.Text);
+                    double Dicke = double.Parse(txtbox_rechteckrohrprofil_d.Text);
 
                     if (Breite <= 0)
                     {
@@ -552,7 +538,7 @@ namespace HSP_Sprint2
 
         }
 
-        //Berechnung
+        //Berechnung 
 
         public double berechnungVolumen_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge)
         {
@@ -624,7 +610,7 @@ namespace HSP_Sprint2
                     double Breite_b = double.Parse(txtbox_Tprofil_b.Text);
                     double Hoehe_H = double.Parse(txtbox_Tprofil_H.Text);
                     double Hoehe_h = double.Parse(txtbox_Tprofil_h.Text);
-                    double Laenge_l = double.Parse(txtbox_rohrprofil_l.Text);
+                    double Laenge_l = double.Parse(txtbox_Tprofil_l.Text);
                     
 
                     if (Breite_B <= 0)
@@ -694,7 +680,7 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     txtWXX.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     txtWYY.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht_Tprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+                    //txtGewicht.Text = (berechnungGewicht_Tprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Dichte_Material) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
 
