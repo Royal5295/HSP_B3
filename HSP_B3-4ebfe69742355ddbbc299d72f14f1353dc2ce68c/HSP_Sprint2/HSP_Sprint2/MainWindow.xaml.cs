@@ -480,7 +480,7 @@ namespace HSP_Sprint2
                     double Breite = double.Parse(txtbox_rechteckrohrprofil_b.Text);
                     double Hoehe = double.Parse(txtbox_rechteckrohrprofil_h.Text);
                     double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
-                    double Dicke = double.Parse(txtbox_rechteckrohrprofil_d.Text);
+                    double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
 
                     if (Breite <= 0)
                     {
@@ -610,7 +610,7 @@ namespace HSP_Sprint2
         }
 
 
-        private void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
+        public void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
         {
             double Stahl;
             bool checkmate = false;
@@ -629,7 +629,7 @@ namespace HSP_Sprint2
                     if (Breite_B <= 0)
                     {
                         checkmate = true;
-                        MessageBox.Show("Breite muss größer als 0 sein!");
+                        MessageBox.Show("Breite B muss größer als 0 sein!");
                         checkmate = false;
                         Breite_B = 0;
                         Breite_b = 0;
@@ -642,7 +642,7 @@ namespace HSP_Sprint2
                     if (Breite_b <= 0) ;
                     {
                         checkmate = true;
-                        MessageBox.Show("Breite muss größer als 0 sein!");
+                        MessageBox.Show("Breite b muss größer als 0 sein!");
                         checkmate = false;
                         Breite_b = 0;
                         Breite_B = 0;
@@ -654,7 +654,7 @@ namespace HSP_Sprint2
                     if (Hoehe_H <= 0)
                     {
                         checkmate = true;
-                        MessageBox.Show("Höhe muss größer als 0 sein!");
+                        MessageBox.Show("Höhe H muss größer als 0 sein!");
                         checkmate = false;
                         Hoehe_H = 0;
                         Breite_B = 0;
@@ -666,7 +666,7 @@ namespace HSP_Sprint2
                     if (Hoehe_h <=0)
                     {
                         checkmate = true;
-                        MessageBox.Show("Höhe muss größer als 0 sein!");
+                        MessageBox.Show("Höhe h muss größer als 0 sein!");
                         checkmate = false; 
                         Hoehe_h = 0;
                         Breite_B = 0;
@@ -675,19 +675,17 @@ namespace HSP_Sprint2
                         Laenge_l = 0;
                     }
 
-                    if (Laenge <= 0)
+                    if (Laenge_l <= 0)
                     {
                         checkmate = true;
-                        MessageBox.Show("Laenge muss größer als 0 sein!");
+                        MessageBox.Show("Länge muss größer als 0 sein!");
                         checkmate = false;
-                        Laenge = 0;
-                        Breite = 0;
-                        Hoehe = 0;
-                        Dicke = 0;
-
-
+                        Laenge_l = 0;
+                        Hoehe_h = 0;
+                        Breite_B = 0;
+                        Breite_b = 0;
+                        Hoehe_H = 0;
                     }
-
 
 
                     txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
@@ -713,7 +711,30 @@ namespace HSP_Sprint2
 
         }
 
+        public double berechnungVolumen_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h, double Laenge_l)
+        {
+            double Volumen_Tprofil = ((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l;
 
-    }
+            return Volumen_Tprofil;
+        }
+
+        public double berechnungIXX_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double IXX_Tprofil = (Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 12;
+
+            return IXX_Tprofil;
+        }
+
+
+
+        public double berechnungIYY_Tprofil()
+
+}
+
+   
+    
+
+
+}
 
 }
