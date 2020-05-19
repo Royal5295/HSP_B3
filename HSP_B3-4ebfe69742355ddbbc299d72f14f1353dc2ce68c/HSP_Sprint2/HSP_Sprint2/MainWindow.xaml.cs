@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -688,14 +689,14 @@ namespace HSP_Sprint2
                     }
 
 
-                    txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
-                    txtIXX.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
-                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
-                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
+                    txtVolumen.Text = (berechnungVolumen_Tprofil(Breite_B, Breite_b Hoehe_H, Hoehe_h, Laenge_l) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b Hoehe_H, Hoehe_h) + "mm");
+                    txtIYY.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b Hoehe_H, Hoehe_h) + "mm");
+                    txtWXX.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b Hoehe_H, Hoehe_h) + "mm");
+                    txtWYY.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b Hoehe_H, Hoehe_h) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht_Tprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Breite) + "mm");
+                    SchwerpunktY.Text = (berechnungSchwerpunktX_Tprofil(Hoehe) + "mm");
 
                 }
 
@@ -725,10 +726,50 @@ namespace HSP_Sprint2
             return IXX_Tprofil;
         }
 
+        public double berechnungIYY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double IYY_Tprofil = (Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 12;
+
+            return IYY_Tprofil;
+        }
+
+        public double berechnungWXX_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double WXX_Tprofil = (Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 6 * Hoehe_H;
+
+            return WXX_Tprofil;
+        }
+
+        public double berechnungWYY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double WYY_Tprofil = (Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 6 * Hoehe_H;
+
+            return WYY_Tprofil;
+        }
+
+       /* public double berechnungGewicht_Tprofil(double Volumen, double Dichte_Material)
+        {
+            double Gewicht_Tprofil = Volumen * Dichte_Material;
+
+            return Gewicht_Tprofil;
+        }
+        */
+        public double berechnungSchwerpunktX_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double SchwerpunktX_tProfil =
+
+            return SchwerpunktX_tProfil;
+        }
+
+        public double berechnungSchwerpunktY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double SchwerpunktY_tProfil =
+
+            return SchwerpunktY_tProfil;
 
 
-        public double berechnungIYY_Tprofil()
 
+        }
 }
 
    
