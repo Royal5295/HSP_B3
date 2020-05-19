@@ -47,7 +47,7 @@
 
         </StackPanel>
 
-        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" Visibility="Visible" >
+        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" Visibility="Hidden" >
 
             <Label Content="IZZ:" Target="{Binding ElementName=txtIZZ}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtIZZ" />
@@ -104,11 +104,11 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_l"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_l" QueryCursor="laenge_anzeigen_rechteck" MouseEnter="laenge_anzeigen_rechteck" MouseLeave="laenge_verdecken_rechteck"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="346,68,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckprofil_b"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckprofil_b" MouseEnter="breite_anzeigen_rechteck" MouseLeave="breite_verdecken_rechteck"/>
             <Label Content="Breite:" HorizontalAlignment="Left" Margin="343,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_h"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckprofil_h" MouseEnter="hoehe_anzeigen_rechteck" MouseLeave="hoehe_verdecken_rechteck"/>
             <Label Content="Hohe:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
@@ -123,19 +123,21 @@
             <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
             <Label Content="Rechteckprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Rechteckprofil" Click="btn_brechnung_Rechteckprofil_Click" />
-
+            <Line x:Name="laenge_Rechteck" X1="35" Y1=" 126" X2=" 195" Y2=" 220" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
+            <Line x:Name="breite_Rechteck" X1="240" Y1=" 223" X2="270" Y2=" 205" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Line x:Name="hoehe_Rechteck" X1="260" Y1=" 135" X2="260" Y2=" 185" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid" Visibility="Hidden">
-            <Grid.Background>
+        <Grid Margin="194,10,10,128" x:Name="Rundprofil_Grid" Visibility="Hidden" >
+        <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="403,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" x:Name="txtbox_rundprofil_dm" />
+            <TextBox HorizontalAlignment="Left" Margin="403,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" x:Name="Txtbox_rundprofil_dm" MouseEnter="durchmesser_anzeigen_rund" MouseLeave="durchmesser_verdecken_rund" />
             <Label Content="Durchmesser:" HorizontalAlignment="Left" Margin="321,68,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="403,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged" x:Name="txtbox_rundprofil_l" />
+            <TextBox HorizontalAlignment="Left" Margin="403,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged" x:Name="Txtbox_rundprofil_l" MouseEnter="laenge_anzeigen_rund" MouseLeave="laenge_verdecken_rund" />
             <Label Content="lange:" HorizontalAlignment="Left" Margin="356,0,0,0" VerticalAlignment="Center"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,0,0,0" VerticalAlignment="Center"/>
@@ -149,20 +151,23 @@
             <Label Content="Rundprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image x:Name="RundProfil_V" HorizontalAlignment="Left" Height="182" Margin="30,0,0,0" VerticalAlignment="Center" Width="254" Source="/RundProfil_V.jpeg" Stretch="UniformToFill"/>
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_rundprofil" Click="btn_brechnung_rundprofil_Click"/>
+            <Line x:Name="laenge_Rund" X1="55" Y1=" 137" X2=" 220" Y2=" 230" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
+            <Line x:Name="durchmesser_Rund" X1="233" Y1="175" X2="262" Y2=" 192" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+
         </Grid>
 
 
-        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Rohrprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_l"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_l" MouseEnter="laenge_anzeigen_rohr" MouseLeave="laenge_verdecken_rohr"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="351,72,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rohrprofil_dm"/>
-            <Label Content="Durchmesser:" HorizontalAlignment="Left" Margin="316,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.468,1.658"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rohrprofil_b" MouseEnter="durchmesser_anzeigen_rohr" MouseLeave="durchmesser_verdecken_rohr"/>
+            <Label Content="Breite:" HorizontalAlignment="Left" Margin="351,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_d"/>
             <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
@@ -178,6 +183,8 @@
             <Label Content="Rohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image HorizontalAlignment="Left" Height="192" Margin="33,46,0,0" VerticalAlignment="Top" Width="231" Source="/Rohrprofil_H.jpeg" Stretch="UniformToFill"/>
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rohrprofil" Click="btn_berechnung_rohrprofil_Click"/>
+            <Line x:Name="laenge_rohr" X1="43" Y1=" 137" X2=" 195" Y2=" 225" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
+            <Line x:Name="durchmesser_rohr" X1="210" Y1="180" X2="232" Y2=" 192" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
         </Grid>
 
         <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
@@ -190,9 +197,9 @@
                     <GradientStop Color="#FFECF5EC" Offset="0.406"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l" MouseEnter="breite_anzeigen_rechteckrohr" MouseLeave="breite_verdecken_rechteckrohr"/>
             <Label Content="Breite:" HorizontalAlignment="Left" Margin="348,72,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckrohrprofil_b"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rechteckrohrprofil_b" MouseEnter="hoehe_anzeigen_rechteckrohr" MouseLeave="hoehe_verdecken_rechteckrohr"/>
             <Label Content="Hoehe:" HorizontalAlignment="Left" Margin="348,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_h"/>
             <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" x:Name="txtbox_rechteckrohrprofil_d"/>
@@ -206,34 +213,38 @@
                 <ComboBoxItem>kupfer</ComboBoxItem>
             </ComboBox>
             <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l_Copy"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l_Copy" MouseEnter="laenge_anzeigen_rechteckrohr" MouseLeave="laenge_verdecken_rechteckrohr"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,44,0,0" VerticalAlignment="Top"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="349,40,0,0" VerticalAlignment="Top"/>
             <Label Content="Rechteckrohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
             <Image x:Name="Rechteckrohrprofil_H" HorizontalAlignment="Left" Height="203" Margin="24,40,0,0" VerticalAlignment="Top" Width="269" Source="/Rechteckrohrprofil_H.jpeg" Stretch="UniformToFill"/>
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rechteckrohrprofil" Click="btn_berechnung_rechteckrohrprofil_Click"/>
+            <Line x:Name="laenge_rechteckrohr" X1="38" Y1=" 137" X2=" 210" Y2=" 238" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
+            <Line x:Name="hoehe_rechteckrohr" X1="285" Y1="140" X2="285" Y2=" 190" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Line x:Name="breite_rechteckrohr" X1="260" Y1=" 230" X2=" 283" Y2=" 215" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Hidden">
+        <Grid Margin="194,10,10,128" x:Name="Tprofil_Grid" Visibility="Visible">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <TextBox HorizontalAlignment="Left" Margin="407,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_B"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_BB" MouseEnter="breite_bigb_anzeigen_tprofil" MouseLeave="breite_bigb_verdecken_tprofil"/>
             <Label Content="Breite B:" HorizontalAlignment="Left" Margin="345,81,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_h"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_b" MouseEnter="hoehe_h_anzeigen_tprofil" MouseLeave="hoehe_h_verdecken_tprofil"/>
             <Label Content="Hoehe h:" HorizontalAlignment="Left" Margin="345,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
-            <TextBox HorizontalAlignment="Left" Margin="407,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_H"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_HH" MouseEnter="hoehe_bigh_anzeigen_tprofil" MouseLeave="hoehe_bigh_verdecken_tprofil"/>
             <Label Content="Hoehe H:" HorizontalAlignment="Left" Margin="345,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" x:Name="txtbox_Tprofil_d"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,81,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,109,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,138,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="408,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_b"/>
+            <TextBox HorizontalAlignment="Left" Margin="408,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_Bb" MouseEnter="breite_b_anzeigen_tprofil" MouseLeave="breite_b_verdecken_tprofil"/>
             <Label Content="Breite b:" HorizontalAlignment="Left" Margin="345,47,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,50,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Margin="407,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_l"/>
+            <TextBox HorizontalAlignment="Left" Margin="407,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_L" MouseEnter="laenge_anzeigen_tprofil" MouseLeave="laenge_verdecken_tprofil"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="345,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" />
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,160,0,0" VerticalAlignment="Top"/>
             <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
@@ -247,6 +258,12 @@
             <Image x:Name="T_profil_S" HorizontalAlignment="Left" Height="177" Margin="10,41,0,0" VerticalAlignment="Top" Width="269" Source="/Tprofil_S.jpeg" Stretch="UniformToFill"/>
 
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Tprofil" Click="btn_brechnung_Tprofil_Click" Visibility="Visible" />
+            <Line x:Name="laenge_tprofil" X1="14" Y1=" 124" X2=" 180" Y2=" 220" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
+            <Line x:Name="breite_b_tprofil" X1="245" Y1="140" X2="245" Y2=" 176" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Line x:Name="breite_B_tprofil" X1="270" Y1="158" X2="270" Y2=" 175" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Line x:Name="hoehe_H_tprofil" X1="225" Y1=" 217" X2=" 262" Y2=" 195" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+            <Line x:Name="hoehe_h_tprofil" X1="205" Y1=" 148" X2=" 218" Y2=" 140" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
+
         </Grid>
 
 
