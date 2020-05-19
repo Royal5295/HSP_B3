@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
 
-        <StackPanel x:Name="ausgaben1" Margin="0,258,10,0" HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
+        <StackPanel x:Name="ausgaben1" Margin="0,258,-450,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Top" Width="241" Height="201" >
 
             <Label Content="Volumen:" Target="{Binding ElementName=txtVolumen}" />
             <TextBox x:Name="txtVolumen" />
@@ -33,9 +33,9 @@
 
 
 
-        <StackPanel x:Name="ausgaben2" Margin="0,258,0,0" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
+        <StackPanel x:Name="ausgaben2" Margin="100,258,250,0" HorizontalAlignment="Stretch" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
 
-            <Label Content="Masse:" Target="{Binding ElementName=txtMasse}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
+            <Label Content="Gewicht:" Target="{Binding ElementName=txtMasse}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtMasse" />
             <Label Content="IYY:" Target="{Binding ElementName=txtIYY}" />
             <TextBox x:Name="txtIYY" />
@@ -47,7 +47,7 @@
 
         </StackPanel>
 
-        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" Visibility="Visible" >
+        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" Visibility="Hidden" >
 
             <Label Content="IZZ:" Target="{Binding ElementName=txtIZZ}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtIZZ" />
@@ -96,6 +96,15 @@
 
         </Grid>
 
+        <Grid Margin="194,10,10,128" x:Name="Homepage" Visibility="Visible">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label Content="Welcome from HSP-B3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="62" Width="310" FontWeight="Bold" FontSize="25"/>
+        </Grid>
 
         <Grid Margin="194,10,10,128" x:Name="RechteckProfil_Grid" Visibility="Hidden" >
             <Grid.Background>
@@ -180,7 +189,7 @@
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rohrprofil" Click="btn_berechnung_Rohrprofil_Click"/>
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Visible">
+        <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFEFF"/>
