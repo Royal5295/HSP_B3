@@ -468,7 +468,7 @@ namespace HSP_Sprint2
         }
 
         // Rechteckrohr Ausführung Berechnung
-        private void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
+        public void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
         {
             double Stahl;
             bool checkmate = false;
@@ -477,16 +477,29 @@ namespace HSP_Sprint2
                 try
                 {
 
-                    double Durchmesser = double.Parse(txtbox_rohrprofil_dm.Text);
+                    double Breite = double.Parse(txtbox_rechteckrohrprofil_b.Text);
+                    double Hoehe = double.Parse(txtbox_rechteckrohrprofil_h.Text);
                     double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
-                    double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
+                    double Dicke = double.Parse(txtbox_rechteckrohrprofil_d.Text);
 
-                    if (Durchmesser <= 0)
+                    if (Breite <= 0)
                     {
                         checkmate = true;
                         MessageBox.Show("Breite muss größer als 0 sein!");
                         checkmate = false;
-                        Durchmesser = 0;
+                        Breite = 0;
+                        Hoehe = 0;
+                        Laenge = 0;
+                        Dicke = 0;
+                    }
+
+                    if (Hoehe <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Höhe muss größer als 0 sein!");
+                        checkmate = false;
+                        Hoehe = 0;
+                        Breite = 0;
                         Laenge = 0;
                         Dicke = 0;
                     }
@@ -497,8 +510,10 @@ namespace HSP_Sprint2
                         MessageBox.Show("Laenge muss größer als 0 sein!");
                         checkmate = false;
                         Laenge = 0;
-                        Durchmesser = 0;
+                        Breite = 0;
+                        Hoehe = 0;
                         Dicke = 0;
+
 
                     }
 
@@ -508,20 +523,181 @@ namespace HSP_Sprint2
                         MessageBox.Show("Dicke muss größer als 0 sein!");
                         checkmate = false;
                         Dicke = 0;
-                        Durchmesser = 0;
+                        Breite = 0;
+                        Hoehe = 0;
                         Laenge = 0;
                     }
 
 
 
-                    txtVolumen.Text = (berechnungVolumen_Rohrprofil(Durchmesser, Dicke, Laenge) + "mm³");
-                    txtIXX.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
-                    txtIYY.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
-                    txtWXX.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
-                    txtWYY.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht(Durchmesser, Dicke, Laenge, Volumen, Sorte) + "g");
-                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
-                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
+                    txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
+                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
+
+                }
+
+                catch (FormatException)
+                {
+
+                    MessageBox.Show("Error! Keine Buchstaben eingeben!");
+                }
+            }
+            while (checkmate);
+
+        }
+
+        //Berechnung
+
+        public double berechnungVolumen_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge)
+        {
+            double Volumen_Rechteckrohrprofil = (Breite * Hoehe) - ((Breite - (2 * Dicke)) + (Hoehe - (2 * Dicke))) * Laenge;
+
+            return Volumen_Rechteckrohrprofil;
+        }
+
+        public double berechnungIXX_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
+        {
+            double IXX_Rechteckrohrprofil = ((Hoehe * Math.Pow(Breite, 3)) - (((Hoehe - (2 * Dicke))) * Math.Pow(Breite - (2 * Dicke), 3))) / 12;
+
+            return IXX_Rechteckrohrprofil;
+        }
+
+        public double berechnungIYY_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
+        {
+            double IYY_Rechteckrohrprofil = ((Breite * Math.Pow(Hoehe, 3)) - (((Breite - (2 * Dicke))) * Math.Pow(Hoehe - (2 * Dicke), 3))) / 12;
+
+            return IYY_Rechteckrohrprofil;
+        }
+
+        public double berechnungWXX_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
+        {
+            double WXX_Rechteckrohrprofil = ((Hoehe * Math.Pow(Breite, 3)) + (((Hoehe - (2 * Dicke))) * Math.Pow(Breite - (2 * Dicke), 3))) / 6 * Hoehe;
+
+            return WXX_Rechteckrohrprofil;
+        }
+
+        public double berechnungWYY_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
+        {
+            double WYY_Rechteckrohrprofil = ((Breite * Math.Pow(Hoehe, 3)) + (((Breite - (2 * Dicke))) * Math.Pow(Hoehe - (2 * Dicke), 3))) / 6 * Hoehe;
+
+            return WYY_Rechteckrohrprofil;
+        }
+
+        /*public double berechnungGewicht_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge, double Volumen, double Dichte_Material)
+            {
+                double Gewicht_Rechtekrohrprofil = Volumen * Dichte_Material
+
+                return Gewicht_Rechteckrohrprofil;
+            }
+        */
+        public double berechnungSchwerpunktX_Rechteckrohrprofil(double Breite)
+        {
+            double SchwerpunktX_Rechteckrohrprofil = (Breite / 2);
+
+            return SchwerpunktX_Rechteckrohrprofil;
+        }
+
+        public double berechnungSchwerpunktY_Rechteckrohrprofil(double Hoehe)
+        {
+            double SchwerpunktY_Rechteckrohrprofil = (Hoehe / 2);
+
+            return SchwerpunktY_Rechteckrohrprofil;
+        }
+
+
+        private void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
+        {
+            double Stahl;
+            bool checkmate = false;
+            do
+            {
+                try
+                {
+
+                    double Breite_B = double.Parse(txtbox_Tprofil_B.Text);
+                    double Breite_b = double.Parse(txtbox_Tprofil_b.Text);
+                    double Hoehe_H = double.Parse(txtbox_Tprofil_H.Text);
+                    double Hoehe_h = double.Parse(txtbox_Tprofil_h.Text);
+                    double Laenge_l = double.Parse(txtbox_rohrprofil_l.Text);
+                    
+
+                    if (Breite_B <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Breite muss größer als 0 sein!");
+                        checkmate = false;
+                        Breite_B = 0;
+                        Breite_b = 0;
+                        Hoehe_H = 0;
+                        Hoehe_h = 0;
+                        Laenge_l = 0;
+                       
+                    }
+
+                    if (Breite_b <= 0) ;
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Breite muss größer als 0 sein!");
+                        checkmate = false;
+                        Breite_b = 0;
+                        Breite_B = 0;
+                        Hoehe_H = 0;
+                        Hoehe_h = 0;
+                        Laenge_l = 0;
+                    }
+
+                    if (Hoehe_H <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Höhe muss größer als 0 sein!");
+                        checkmate = false;
+                        Hoehe_H = 0;
+                        Breite_B = 0;
+                        Breite_b = 0;
+                        Hoehe_h = 0;
+                        Laenge_l = 0;
+                    }
+
+                    if (Hoehe_h <=0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Höhe muss größer als 0 sein!");
+                        checkmate = false; 
+                        Hoehe_h = 0;
+                        Breite_B = 0;
+                        Breite_b = 0;
+                        Hoehe_H = 0;
+                        Laenge_l = 0;
+                    }
+
+                    if (Laenge <= 0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Laenge muss größer als 0 sein!");
+                        checkmate = false;
+                        Laenge = 0;
+                        Breite = 0;
+                        Hoehe = 0;
+                        Dicke = 0;
+
+
+                    }
+
+
+
+                    txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
+                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
 
                 }
 
@@ -535,17 +711,9 @@ namespace HSP_Sprint2
 
 
 
-
         }
 
-        private void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
-        {
 
-
-
-        }
-        
-        
     }
 
 }
