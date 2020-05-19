@@ -284,7 +284,7 @@ namespace HSP_Sprint2
                         Laenge = 0;
                     }
 
-
+/*
 
                     txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
                     txtIXX.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
@@ -294,7 +294,7 @@ namespace HSP_Sprint2
                     //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
-
+*/
                 }
 
                 catch (FormatException)
@@ -308,137 +308,83 @@ namespace HSP_Sprint2
         }
 
       
-
-        private void laenge_anzeigen_rechteck(object sender, MouseEventArgs e)
-        {
-            laenge_Rechteck.Visibility = Visibility.Visible;
-        }
-
-        private void laenge_verdecken_rechteck(object sender, MouseEventArgs e)
-        {
-            laenge_Rechteck.Visibility = Visibility.Hidden;
-        }
-
-        private void breite_anzeigen_rechteck(object sender, MouseEventArgs e)
-        {
-            breite_Rechteck.Visibility = Visibility.Visible;
-        }
-
-        private void breite_verdecken_rechteck(object sender, MouseEventArgs e)
-        {
-            breite_Rechteck.Visibility = Visibility.Hidden;
-        }
-
-        private void hoehe_anzeigen_rechteck(object sender, MouseEventArgs e)
-        {
-            hoehe_Rechteck.Visibility = Visibility.Visible;
-        }
-
-        private void hoehe_verdecken_rechteck(object sender, MouseEventArgs e)
-        {
-            hoehe_Rechteck.Visibility = Visibility.Hidden;
-        }
-
-        private void durchmesser_anzeigen_rund(object sender, MouseEventArgs e)
-        {
-            durchmesser_Rund.Visibility = Visibility.Visible;
-        }
-
-        private void durchmesser_verdecken_rund(object sender, MouseEventArgs e)
-        {
-            durchmesser_Rund.Visibility = Visibility.Hidden;
-        }
-
-        private void laenge_anzeigen_rund(object sender, MouseEventArgs e)
-        {
-            laenge_Rund.Visibility = Visibility.Visible;
-        }
-
-        private void laenge_verdecken_rund(object sender, MouseEventArgs e)
-        {
-            laenge_Rund.Visibility = Visibility.Hidden;
-        }
-
-        private void durchmesser_anzeigen_rohr(object sender, MouseEventArgs e)
-        {
-            durchmesser_rohr.Visibility = Visibility.Visible;
-        }
-
-
+        /*
         public void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
+        {
 
-	
-                    if (Breite_B <= 0)
-                    {
-                        checkmate = true;
-                        MessageBox.Show("Breite B muss größer als 0 sein!");
-                        checkmate = false;
-                        Breite_B = 0;
-                        Breite_b = 0;
-                        Hoehe_H = 0;
-                        Hoehe_h = 0;
-                        Laenge_l = 0;
-                       
-                    }
+            if (Breite_B <= 0)
+            {
+                checkmate = true;
+                MessageBox.Show("Breite B muss größer als 0 sein!");
+                checkmate = false;
+                Breite_B = 0;
+                Breite_b = 0;
+                Hoehe_H = 0;
+                Hoehe_h = 0;
+                Laenge_l = 0;
 
-                    if (Breite_b <= 0) ;
-                    {
-                        checkmate = true;
-                        MessageBox.Show("Breite b muss größer als 0 sein!");
-                        checkmate = false;
-                        Breite_b = 0;
-                        Breite_B = 0;
-                        Hoehe_H = 0;
-                        Hoehe_h = 0;
-                        Laenge_l = 0;
-                    }
+            }
 
-                    if (Hoehe_H <= 0)
-                    {
-                        checkmate = true;
-                        MessageBox.Show("Höhe H muss größer als 0 sein!");
-                        checkmate = false;
-                        Hoehe_H = 0;
-                        Breite_B = 0;
-                        Breite_b = 0;
-                        Hoehe_h = 0;
-                        Laenge_l = 0;
-                    }
+            if (Breite_b <= 0) ;
+            {
+                checkmate = true;
+                MessageBox.Show("Breite b muss größer als 0 sein!");
+                checkmate = false;
+                Breite_b = 0;
+                Breite_B = 0;
+                Hoehe_H = 0;
+                Hoehe_h = 0;
+                Laenge_l = 0;
+            }
 
-                    if (Hoehe_h <=0)
-                    {
-                        checkmate = true;
-                        MessageBox.Show("Höhe h muss größer als 0 sein!");
-                        checkmate = false; 
-                        Hoehe_h = 0;
-                        Breite_B = 0;
-                        Breite_b = 0;
-                        Hoehe_H = 0;
-                        Laenge_l = 0;
-                    }
+            if (Hoehe_H <= 0)
+            {
+                checkmate = true;
+                MessageBox.Show("Höhe H muss größer als 0 sein!");
+                checkmate = false;
+                Hoehe_H = 0;
+                Breite_B = 0;
+                Breite_b = 0;
+                Hoehe_h = 0;
+                Laenge_l = 0;
+            }
 
-                    if (Laenge_l <= 0)
-                    {
-                        checkmate = true;
-                        MessageBox.Show("Länge muss größer als 0 sein!");
-                        checkmate = false;
-                        Laenge_l = 0;
-                        Hoehe_h = 0;
-                        Breite_B = 0;
-                        Breite_b = 0;
-                        Hoehe_H = 0;
-                    }
+            if (Hoehe_h <= 0)
+            {
+                checkmate = true;
+                MessageBox.Show("Höhe h muss größer als 0 sein!");
+                checkmate = false;
+                Hoehe_h = 0;
+                Breite_B = 0;
+                Breite_b = 0;
+                Hoehe_H = 0;
+                Laenge_l = 0;
+            }
 
-                    txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
-                    txtIXX.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
-                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
-                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
+            if (Laenge_l <= 0)
+            {
+                checkmate = true;
+                MessageBox.Show("Länge muss größer als 0 sein!");
+                checkmate = false;
+                Laenge_l = 0;
+                Hoehe_h = 0;
+                Breite_B = 0;
+                Breite_b = 0;
+                Hoehe_H = 0;
+            }
 
-		 private void laenge_anzeigen_rechteck(object sender, MouseEventArgs e)
+            txtVolumen.Text = (berechnungVolumen_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "mm³");
+            txtIXX.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+            txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+            txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+            txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
+            //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+            SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
+            SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
+        }
+
+    */
+        private void laenge_anzeigen_rechteck(object sender, MouseEventArgs e)
         {
             laenge_Rechteck.Visibility = Visibility.Visible;
         }
@@ -589,7 +535,7 @@ namespace HSP_Sprint2
             laenge_tprofil.Visibility = Visibility.Hidden;
         }
     }
-
+/*
         public double berechnungVolumen_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h, double Laenge_l)
         {
             double Volumen_Tprofil = ((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l;
@@ -605,16 +551,15 @@ namespace HSP_Sprint2
         }
 
 
+*/
+   /*    public double berechnungIYY_Tprofil()
+    {
 
-        public double berechnungIYY_Tprofil()
-
+    }
+    */
 }
 
    
     
 
 
-}
-
-
-}
