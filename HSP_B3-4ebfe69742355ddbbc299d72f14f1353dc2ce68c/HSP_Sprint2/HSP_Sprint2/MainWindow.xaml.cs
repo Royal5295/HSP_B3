@@ -359,6 +359,7 @@ namespace HSP_Sprint2
             return SchwerpunktX;
         }
 
+        //Rundprofil Ausführung Berechnung
 
         private void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
         {
@@ -370,8 +371,9 @@ namespace HSP_Sprint2
                     try
                     {
 
-                        double Durchmesser = double.Parse(Txtbox_rundprofil_dm.Text);
-                        double Laenge = double.Parse(Txtbox_rundprofil_l.Text);
+                        double Durchmesser = double.Parse(txtbox_rohrprofil_b.Text);
+                        double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
+                        double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
 
                         if (Durchmesser <= 0)
                         {
@@ -380,6 +382,7 @@ namespace HSP_Sprint2
                             checkmate = false;
                             Durchmesser = 0;
                             Laenge = 0;
+                            Dicke
                         }
 
                         if (Laenge <= 0)
