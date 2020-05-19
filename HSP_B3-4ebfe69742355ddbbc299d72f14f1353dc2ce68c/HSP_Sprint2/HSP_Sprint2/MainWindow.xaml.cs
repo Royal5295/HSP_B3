@@ -128,10 +128,30 @@ namespace HSP_Sprint2
         {
 
         }
+        public void Stahl_Selected(object sender, RoutedEventArgs e)
+        {
+            double Stahl = 0.00787;
+        }
+
+        public void Titanium_Selected(object sender, RoutedEventArgs e)
+        {
+            double Titanium = 0.004506;
+        }
+
+        public void Aluminium_Selected(object sender, RoutedEventArgs e)
+        {
+            double Aluminium = 0.0027;
+        }
+
+        public void Kupfer_Selected(object sender, RoutedEventArgs e)
+        {
+            double Kupfer = 0.00896;
+        }
+        
         // Rechteckprofil Ausfuehrung Berechnung
         public void btn_brechnung_Rechteckprofil_Click(object sender, RoutedEventArgs e)
         {
-
+            double Stahl;
             bool checkmate = false;
             do
             { 
@@ -148,11 +168,36 @@ namespace HSP_Sprint2
                         MessageBox.Show("Breite muss größer als 0 sein!");
                         checkmate = false;
                         Breite = 0;
+                        Hoehe = 0;
+                        Laenge = 0;
+                    }
+
+                if (Hoehe <=0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Hoehe muss größer als 0 sein!");
+                        checkmate = false;
+                        Hoehe = 0;
+                        Breite = 0;
+                        Laenge = 0;
+                    }
+
+                if (Laenge <=0)
+                    {
+                        checkmate = true;
+                        MessageBox.Show("Laenge muss größer als 0 sein!");
+                        checkmate = false;
+                        Laenge = 0;
+                        Breite = 0;
+                        Hoehe = 0;
                     }
 
                     txtVolumen.Text = (berechnungVolumen(Breite, Hoehe, Laenge) + "mm³");
                     txtIXX.Text = (berechnungIXX(Breite, Hoehe) + "mm^4");
                     txtIYY.Text = (berechnungIYY(Breite, Hoehe) + "mm^4");
+                    txtWXX.Text = (berechnungWXX(Breite, Hoehe) + "mm^4");
+                    txtWYY.Text = (berechnungWYY(Breite, Hoehe) + "mm^4");
+                    txtGewicht.Text = (berechnungGewicht(Breite, Hoehe, Laenge, Stahl) + "g");
              }
 
             catch (FormatException)
@@ -163,7 +208,7 @@ namespace HSP_Sprint2
             }
             while (checkmate) ;
         }
-
+        // Berechnung
         public double berechnungVolumen(double Breite, double Hoehe, double Laenge)
         {
             double Volumen = Breite * Hoehe * Laenge;
@@ -182,11 +227,30 @@ namespace HSP_Sprint2
         public double berechnungIYY(double Breite, double Hoehe)
         {
             double IYY = (Hoehe * (Math.Pow(Breite, 3)) / 12);
-            
-
+           
             return IYY;
         }
 
+        public double berechnungWXX(double Breite, double Hoehe)
+        {
+            double WXX = (Breite * (Math.Pow(Hoehe, 2)) / 6);
+
+            return WXX;
+        }
+
+        public double berechnungWYY(double Breite, double Hoehe)
+        {
+            double WYY = (Hoehe * (Math.Pow(Breite, 2)) / 6);
+
+            return WYY;
+        }
+
+        public double berechnungGewicht(double Breite, double Hoehe, double Laenge, double Stahl)
+        {
+            double Gewicht = ((Breite * Hoehe * Laenge) * Stahl);
+
+            return Gewicht;
+        }
         
 
 
@@ -236,26 +300,8 @@ namespace HSP_Sprint2
 
 
         }
-
-        private void Stahl_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Titanium_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Aluminium_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Kupfer_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
+        
     }
 
 }
