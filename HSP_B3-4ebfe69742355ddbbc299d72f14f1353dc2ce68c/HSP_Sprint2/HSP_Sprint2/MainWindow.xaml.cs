@@ -467,7 +467,7 @@ namespace HSP_Sprint2
                     double Breite = double.Parse(txtbox_rechteckrohrprofil_b.Text);
                     double Hoehe = double.Parse(txtbox_rechteckrohrprofil_h.Text);
                     double Laenge = double.Parse(txtbox_rechteckrohrprofil_l.Text);
-                    double Dicke = double.Parse(txtbox_rechteckrohrprofil_d.Text);
+                    double Dicke = double.Parse(txt_rechteckrohrprofil_d.Text);
 
                     if (Breite <= 0)
                     {
