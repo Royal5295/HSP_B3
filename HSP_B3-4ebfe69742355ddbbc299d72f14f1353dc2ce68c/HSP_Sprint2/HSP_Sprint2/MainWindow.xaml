@@ -192,11 +192,11 @@
         <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFDFEFD"/>
-                    <GradientStop Color="#FFECF5EC" Offset="0"/>
-                    <GradientStop Color="#FFECF5EC" Offset="0"/>
-                    <GradientStop Color="#FFECF5EC" Offset="0.406"/>
-                    <GradientStop Color="#FFECF5EC" Offset="0.406"/>
+                    <GradientStop Color="#FFFFFEFF"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="0.406"/>
+                    <GradientStop Color="White" Offset="0.406"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <TextBox HorizontalAlignment="Left" Margin="408,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_b" MouseEnter="breite_anzeigen_rechteckrohr" MouseLeave="breite_verdecken_rechteckrohr"/>
