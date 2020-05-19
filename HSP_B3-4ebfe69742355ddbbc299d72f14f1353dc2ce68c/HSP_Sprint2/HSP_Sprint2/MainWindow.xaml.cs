@@ -272,26 +272,145 @@ namespace HSP_Sprint2
 
         // Rundprofil Ausfuehrung Berechnung
         public void btn_brechnung_rundprofil_Click(object sender, RoutedEventArgs e)
+        
+            {
+                double Stahl;
+                bool checkmate = false;
+                do
+                {
+                    try
+                    {
+
+                        double Durchmesser = double.Parse(Txtbox_rundprofil_dm.Text);
+                        double Laenge = double.Parse(Txtbox_rundprofil_l.Text);
+
+                        if (Durchmesser <= 0)
+                        {
+                            checkmate = true;
+                            MessageBox.Show("Breite muss größer als 0 sein!");
+                            checkmate = false;
+                            Durchmesser = 0;
+                            Laenge = 0;
+                        }
+
+                        if (Laenge <= 0)
+                        {
+                            checkmate = true;
+                            MessageBox.Show("Laenge muss größer als 0 sein!");
+                            checkmate = false;
+                            Laenge = 0;
+                            Durchmesser = 0;
+                        }
+
+                    txtVolumen.Text = (berechnungVolumen_Rundprofil(Durchmesser, Laenge) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
+                    txtIYY.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
+                    txtWXX.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
+                    txtWYY.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht(Durchmesser, Laenge, Sorte) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
+                    SchwerpunktY.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
+                       
+
+                    }
+
+                    catch (FormatException)
+                    {
+
+                        MessageBox.Show("Error! Keine Buchstaben eingeben!");
+                    }
+                }
+                while (checkmate);
+            }
+        public double berechnungVolumen_Rundprofil(double Durchmesser, double Laenge)
         {
-          try
-            {
-               
-
-            }
-
-            catch (FormatException)
-            {
-
-                MessageBox.Show("Error! Keine Buchstaben eingeben!");
-            }
+            double Volumen_Rundprofil = (((Math.PI * Math.Pow(Durchmesser , 2))/ 4) * Laenge);
 
 
-
-
+            return Volumen_Rundprofil;
         }
+
+        public double berechnungIXX_Rundprofil(double Durchmesser)
+        {
+            double IXX_Rundprofil = ((Math.PI * Math.Pow(Durchmesser, 4)) / 64);
+
+            return IXX_Rundprofil;
+        }
+        
+        public double berechnungWXX_Rundprofil(double Durchmesser)
+        {
+            double WXX_Rundprofil = ((Math.PI * Math.Pow(Durchmesser, 3))/3);
+
+            return WXX_Rundprofil;
+        }
+
+        /*public double berechnungGewicht_Rundprofil(double Durchmesser, double Laenge, Sorte)
+        {
+            double Gewicht = ((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) * Laenge) * Sorte);
+
+            return Gewicht;
+        }
+       */
+
+        public double berechnungSchwerpunktX_Rundprofil(double Durchmesser)
+        {
+            double SchwerpunktX = Durchmesser / 2 ;
+
+            return SchwerpunktX;
+        }
+
 
         private void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
         {
+           
+                double Stahl;
+                bool checkmate = false;
+                do
+                {
+                    try
+                    {
+
+                        double Durchmesser = double.Parse(Txtbox_rundprofil_dm.Text);
+                        double Laenge = double.Parse(Txtbox_rundprofil_l.Text);
+
+                        if (Durchmesser <= 0)
+                        {
+                            checkmate = true;
+                            MessageBox.Show("Breite muss größer als 0 sein!");
+                            checkmate = false;
+                            Durchmesser = 0;
+                            Laenge = 0;
+                        }
+
+                        if (Laenge <= 0)
+                        {
+                            checkmate = true;
+                            MessageBox.Show("Laenge muss größer als 0 sein!");
+                            checkmate = false;
+                            Laenge = 0;
+                            Durchmesser = 0;
+                        }
+
+                        txtVolumen.Text = (berechnungVolumen_Rundprofil(Durchmesser, Laenge) + "mm³");
+                        txtIXX.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
+                        txtIYY.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
+                        txtWXX.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
+                        txtWYY.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
+                        //txtGewicht.Text = (berechnungGewicht(Durchmesser, Laenge, Sorte) + "g");
+                        SchwerpunktX.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
+                        SchwerpunktY.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
+
+
+                    }
+
+                    catch (FormatException)
+                    {
+
+                        MessageBox.Show("Error! Keine Buchstaben eingeben!");
+                    }
+                }
+                while (checkmate);
+            
 
 
 
