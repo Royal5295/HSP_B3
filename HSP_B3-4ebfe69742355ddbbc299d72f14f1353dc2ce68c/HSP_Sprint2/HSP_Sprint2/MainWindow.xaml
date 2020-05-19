@@ -22,7 +22,7 @@
             <TextBox x:Name="txtIXX" />
             <Label Content="WXX:" Target="{Binding ElementName=txtWXX}" />
             <TextBox x:Name="txtWXX" />
-            <Label Content="SChwerpunktX:" Target="{Binding ElementName=txtScxhwerpunktX}" />
+            <Label Content="SchwerpunktX:" Target="{Binding ElementName=txtScxhwerpunktX}" />
             <TextBox x:Name="SchwerpunktX" />
 
 
@@ -35,13 +35,13 @@
 
         <StackPanel x:Name="ausgaben2" Margin="0,258,0,0" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
 
-            <Label Content="IYY:" Target="{Binding ElementName=txtIYY}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
-            <TextBox x:Name="txtIYY" />
-            <Label Content="Masse:" Target="{Binding ElementName=txtMasse}" />
+            <Label Content="Masse:" Target="{Binding ElementName=txtMasse}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtMasse" />
+            <Label Content="IYY:" Target="{Binding ElementName=txtIYY}" />
+            <TextBox x:Name="txtIYY" />
             <Label Content="WYY:" Target="{Binding ElementName=txtWYY}" />
             <TextBox x:Name="txtWYY" />
-            <Label Content="SchwerpunktY:" Target="{Binding ElementName=txtSChwerpunktY}" />
+            <Label Content="SchwerpunktY:" Target="{Binding ElementName=txtSchwerpunktY}" />
             <TextBox x:Name="SchwerpunktY" />
 
 

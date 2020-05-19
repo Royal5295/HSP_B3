@@ -55,3 +55,22 @@ C:\Users\Niko Buelmann\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f1
 C:\Users\Niko Buelmann\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.dll
 C:\Users\Niko Buelmann\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.pdb
 C:\Users\Niko Buelmann\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.genruntimeconfig.cache
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\bin\Debug\netcoreapp3.1\HSP_Sprint2.exe
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\bin\Debug\netcoreapp3.1\HSP_Sprint2.deps.json
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\bin\Debug\netcoreapp3.1\HSP_Sprint2.runtimeconfig.json
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\bin\Debug\netcoreapp3.1\HSP_Sprint2.runtimeconfig.dev.json
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\bin\Debug\netcoreapp3.1\HSP_Sprint2.dll
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\bin\Debug\netcoreapp3.1\HSP_Sprint2.pdb
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.csprojAssemblyReference.cache
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2_MarkupCompile.cache
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2_MarkupCompile.lref
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.g.resources
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.csproj.CoreCompileInputs.cache
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.AssemblyInfoInputs.cache
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.AssemblyInfo.cs
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.dll
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.pdb
+C:\Users\Essam Asian Man\Documents\GitHub\HSP_B3\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\HSP_Sprint2\HSP_Sprint2\obj\Debug\netcoreapp3.1\HSP_Sprint2.genruntimeconfig.cache
