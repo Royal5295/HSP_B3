@@ -197,7 +197,10 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIYY(Breite, Hoehe) + "mm^4");
                     txtWXX.Text = (berechnungWXX(Breite, Hoehe) + "mm^4");
                     txtWYY.Text = (berechnungWYY(Breite, Hoehe) + "mm^4");
-                    txtGewicht.Text = (berechnungGewicht(Breite, Hoehe, Laenge, Stahl) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX(Breite) + "mm");
+                    SchwerpunktY.Text  = (berechnungSchwerpunktY(Hoehe) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht(Breite, Hoehe, Laenge, Stahl) + "g");
+                    
              }
 
             catch (FormatException)
@@ -245,13 +248,26 @@ namespace HSP_Sprint2
             return WYY;
         }
 
-        public double berechnungGewicht(double Breite, double Hoehe, double Laenge, double Stahl)
-        {
-            double Gewicht = ((Breite * Hoehe * Laenge) * Stahl);
+        /*public double berechnungGewicht(double Breite, double Hoehe, double Laenge, double Stahl)
+            {
+                double Gewicht = ((Breite * Hoehe * Laenge) * Stahl);
 
-            return Gewicht;
+                return Gewicht;
+            }
+        */
+        public double berechnungSchwerpunktX(double Breite)
+        {
+            double SchwerpunktX = (Breite / 2);
+
+            return SchwerpunktX;
         }
-        
+
+        public double berechnungSchwerpunktY(double Hoehe)
+        {
+            double SchwerpunktY = (Hoehe / 2);
+
+            return SchwerpunktY;
+        }
 
 
         // Rundprofil Ausfuehrung Berechnung
