@@ -305,29 +305,25 @@ namespace HSP_Sprint2
 
         }
 
+        private void Stahl_Selected(object sender, RoutedEventArgs e)
+        {
 
+        }
 
+        private void Titanium_Selected(object sender, RoutedEventArgs e)
+        {
 
+        }
 
-       
+        private void Aluminium_Selected(object sender, RoutedEventArgs e)
+        {
 
+        }
 
-      
+        private void Kupfer_Selected(object sender, RoutedEventArgs e)
+        {
 
-
-
-        
-
-
-
-
-       
-
-
-
-
-
-
+        }
     }
 
 }

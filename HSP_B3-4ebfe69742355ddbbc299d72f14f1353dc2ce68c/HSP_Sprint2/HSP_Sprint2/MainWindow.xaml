@@ -114,10 +114,10 @@
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
             <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem>Stahl</ComboBoxItem>
-                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
-                <ComboBoxItem>Aluminium</ComboBoxItem>
-                <ComboBoxItem>kupfer</ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Stahl" Selected="Stahl_Selected">Stahl</ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Titanium" IsSelected="True" Selected="Titanium_Selected">Titanium</ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Aluminium" Selected="Aluminium_Selected">Aluminium</ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Kupfer" Selected="Kupfer_Selected">Kupfer</ComboBoxItem>
             </ComboBox>
             <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
