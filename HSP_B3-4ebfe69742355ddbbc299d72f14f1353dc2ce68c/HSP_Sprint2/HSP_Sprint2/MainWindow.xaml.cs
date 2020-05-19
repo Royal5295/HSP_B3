@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -122,55 +123,89 @@ namespace HSP_Sprint2
                         Breite = 0;
                     }
 
-                    txtVolumen.Text = (berechnungVolumen(Breite, Hoehe, Laenge) + "mm³");
-                    txtIXX.Text = (berechnungIXX(Breite, Hoehe) + "mm^4");
-                    txtIYY.Text = (berechnungIYY(Breite, Hoehe) + "mm^4");
-             }
 
-            catch (FormatException)
+                    txtVolumen.Text = (berechnungVolumen_Rechteckprofil(Breite, Hoehe, Laenge) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Rechteckprofil(Breite, Hoehe) + "mm^4");
+                    txtIYY.Text = (berechnungIYY_Rechteckprofil(Breite, Hoehe) + "mm^4");
+                    txtWXX.Text = (berechnungWXX_Rechteckprofil(Breite, Hoehe) + "mm^4");
+                    txtWYY.Text = (berechnungWYY_Rechteckprofil(Breite, Hoehe) + "mm^4");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckprofil(Breite) + "mm");
+                    SchwerpunktY.Text  = (berechnungSchwerpunktY_Rechteckprofil(Hoehe) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht_Rechteckprofil(Breite, Hoehe, Laenge, Stahl) + "g");
+
+            }
+
+                catch (FormatException)
             {
-
                 MessageBox.Show("Error! Keine Buchstaben eingeben!");
             }
             }
             while (checkmate) ;
         }
 
-        public double berechnungVolumen(double Breite, double Hoehe, double Laenge)
+        // Berechnung
+        public double berechnungVolumen_Rechteckprofil(double Breite, double Hoehe, double Laenge)
         {
-            double Volumen = Breite * Hoehe * Laenge;
+            double Volumen_Rechteckprofil = Breite * Hoehe * Laenge;
             
 
-            return Volumen;
+            return Volumen_Rechteckprofil;
         }
 
-       public double berechnungIXX(double Breite, double Hoehe)
+       public double berechnungIXX_Rechteckprofil(double Breite, double Hoehe)
         { 
-            double IXX = (Breite * (Math.Pow(Hoehe, 3)) / 12 );
+            double IXX_Rechteckprofil = (Breite * (Math.Pow(Hoehe, 3)) / 12 );
             
-            return IXX;
+            return IXX_Rechteckprofil;
         }
 
-        public double berechnungIYY(double Breite, double Hoehe)
+        public double berechnungIYY_Rechteckprofil(double Breite, double Hoehe)
         {
-            double IYY = (Hoehe * (Math.Pow(Breite, 3)) / 12);
-            
+            double IYY_Rechteckprofil = (Hoehe * (Math.Pow(Breite, 3)) / 12);
+           
+            return IYY_Rechteckprofil;
 
-            return IYY;
         }
   
+        public double berechnungWXX_Rechteckprofil(double Breite, double Hoehe)
+        {
+            double WXX_Rechteckprofil = (Breite * (Math.Pow(Hoehe, 2)) / 6);
+
+            return WXX_Rechteckprofil;
+        }
+
+        public double berechnungWYY_Rechteckprofil(double Breite, double Hoehe)
+        {
+            double WYY_Rechteckprofil = (Hoehe * (Math.Pow(Breite, 2)) / 6);
+
+            return WYY_Rechteckprofil;
+        }
+
+        /*public double berechnungGewicht_Rechteckprofil(double Breite, double Hoehe, double Laenge, double Stahl)
+            {
+                double Gewicht_Rechteckprofil = ((Breite * Hoehe * Laenge) * Stahl);
+
+                return Gewicht_Rechteckprofil;
+            }
+        */
+        public double berechnungSchwerpunktX_Rechteckprofil(double Breite)
+        {
+            double SchwerpunktX_Rechteckprofil = (Breite / 2);
+
+            return SchwerpunktX_Rechteckprofil;
+        }
+
+        public double berechnungSchwerpunktY_Rechteckprofil(double Hoehe)
+        {
+            double SchwerpunktY_Rechteckprofil = (Hoehe / 2);
+
+            return SchwerpunktY_Rechteckprofil;
+        }
 
 
         // Rundprofil Ausfuehrung Berechnung
-        public void btn_brechnung_rundprofil_Click(object sender, RoutedEventArgs e)
-        {
-          try
-            {
-               
-
-            }
-
-            catch (FormatException)
+        public void btn_brechnung_Rundprofil_Click(object sender, RoutedEventArgs e)
+        
             {
 
                 MessageBox.Show("Error! Keine Buchstaben eingeben!");
@@ -192,7 +227,13 @@ namespace HSP_Sprint2
         }
 
 
+
         private void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
+		{
+		
+		}
+        public void btn_berechnung_Rohrprofil_Click(object sender, RoutedEventArgs e)
+
         {
 
 
@@ -307,6 +348,15 @@ namespace HSP_Sprint2
 
         }
 
+
+                    txtVolumen.Text = (berechnungVolumen_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l) + "mm³");
+                    txtIXX.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
+                    txtIYY.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
+                    txtWXX.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
+                    txtWYY.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
+                    //txtGewicht.Text = (berechnungGewicht_Tprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+                    SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
+                    SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
       
         /*
         public void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
@@ -550,16 +600,60 @@ namespace HSP_Sprint2
             return IXX_Tprofil;
         }
 
+        public double berechnungIYY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double IYY_Tprofil = (Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 12;
+
 
 */
    /*    public double berechnungIYY_Tprofil()
     {
 
     }
-    */
+    
+            return IYY_Tprofil;
+        }
+	*/
+        public double berechnungWXX_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double WXX_Tprofil = (Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 6 * Hoehe_H;
+
+            return WXX_Tprofil;
+        }
+
+        public double berechnungWYY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double WYY_Tprofil = (Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 6 * Hoehe_H;
+
+            return WYY_Tprofil;
+        }
+
+       /* public double berechnungGewicht_Tprofil(double Volumen, double Dichte_Material)
+        {
+            double Gewicht_Tprofil = Volumen * Dichte_Material;
+
+            return Gewicht_Tprofil;
+        }
+        */
+        public double berechnungSchwerpunktX_Tprofil( double Hoehe_H)
+        {
+            double SchwerpunktX_tProfil = Hoehe_H / 2;
+
+            return SchwerpunktX_tProfil;
+        }
+
+        public double berechnungSchwerpunktY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
+        {
+            double SchwerpunktY_tProfil = 0.5 * (((Breite_B * Math.Pow(Hoehe_H, 2)) + (Breite_b * Math.Pow(Hoehe_h, 2))) / (Breite_B * Hoehe_H) + (Breite_b * Hoehe_h));
+
+            return SchwerpunktY_tProfil;
+        }
+
 }
 
    
     
 
+
+}
 
