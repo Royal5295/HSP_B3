@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Essam Asian Man\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj": {}
+    "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Essam Asian Man\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj": {
+    "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Essam Asian Man\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
         "projectName": "HSP_Sprint2",
-        "projectPath": "C:\\Users\\Essam Asian Man\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
-        "packagesPath": "C:\\Users\\Essam Asian Man\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Essam Asian Man\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Essam Asian Man\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

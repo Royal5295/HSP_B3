@@ -256,6 +256,159 @@ namespace HSP_Sprint2
         {
 
         }
+
+      
+
+        private void laenge_anzeigen_rechteck(object sender, MouseEventArgs e)
+        {
+            laenge_Rechteck.Visibility = Visibility.Visible;
+        }
+
+        private void laenge_verdecken_rechteck(object sender, MouseEventArgs e)
+        {
+            laenge_Rechteck.Visibility = Visibility.Hidden;
+        }
+
+        private void breite_anzeigen_rechteck(object sender, MouseEventArgs e)
+        {
+            breite_Rechteck.Visibility = Visibility.Visible;
+        }
+
+        private void breite_verdecken_rechteck(object sender, MouseEventArgs e)
+        {
+            breite_Rechteck.Visibility = Visibility.Hidden;
+        }
+
+        private void hoehe_anzeigen_rechteck(object sender, MouseEventArgs e)
+        {
+            hoehe_Rechteck.Visibility = Visibility.Visible;
+        }
+
+        private void hoehe_verdecken_rechteck(object sender, MouseEventArgs e)
+        {
+            hoehe_Rechteck.Visibility = Visibility.Hidden;
+        }
+
+        private void durchmesser_anzeigen_rund(object sender, MouseEventArgs e)
+        {
+            durchmesser_Rund.Visibility = Visibility.Visible;
+        }
+
+        private void durchmesser_verdecken_rund(object sender, MouseEventArgs e)
+        {
+            durchmesser_Rund.Visibility = Visibility.Hidden;
+        }
+
+        private void laenge_anzeigen_rund(object sender, MouseEventArgs e)
+        {
+            laenge_Rund.Visibility = Visibility.Visible;
+        }
+
+        private void laenge_verdecken_rund(object sender, MouseEventArgs e)
+        {
+            laenge_Rund.Visibility = Visibility.Hidden;
+        }
+
+        private void durchmesser_anzeigen_rohr(object sender, MouseEventArgs e)
+        {
+            durchmesser_rohr.Visibility = Visibility.Visible;
+        }
+
+        private void durchmesser_verdecken_rohr(object sender, MouseEventArgs e)
+        {
+            durchmesser_rohr.Visibility = Visibility.Hidden;
+        }
+
+        private void laenge_anzeigen_rohr(object sender, MouseEventArgs e)
+        {
+            laenge_rohr.Visibility = Visibility.Visible;
+        }
+
+        private void laenge_verdecken_rohr(object sender, MouseEventArgs e)
+        {
+            laenge_rohr.Visibility = Visibility.Hidden;
+        }
+
+        private void laenge_anzeigen_rechteckrohr(object sender, MouseEventArgs e)
+        {
+            laenge_rechteckrohr.Visibility = Visibility.Visible;
+        }
+
+        private void laenge_verdecken_rechteckrohr(object sender, MouseEventArgs e)
+        {
+            laenge_rechteckrohr.Visibility = Visibility.Hidden;
+        }
+
+        private void breite_anzeigen_rechteckrohr(object sender, MouseEventArgs e)
+        {
+            breite_rechteckrohr.Visibility = Visibility.Visible;
+        }
+
+        private void breite_verdecken_rechteckrohr(object sender, MouseEventArgs e)
+        {
+            breite_rechteckrohr.Visibility = Visibility.Hidden;
+        }
+
+        private void hoehe_anzeigen_rechteckrohr(object sender, MouseEventArgs e)
+        {
+            hoehe_rechteckrohr.Visibility = Visibility.Visible;
+        }
+
+        private void hoehe_verdecken_rechteckrohr(object sender, MouseEventArgs e)
+        {
+            hoehe_rechteckrohr.Visibility = Visibility.Hidden;
+        }
+
+        private void breite_b_anzeigen_tprofil(object sender, MouseEventArgs e)
+        {
+            breite_b_tprofil.Visibility = Visibility.Visible;
+        }
+
+        private void breite_b_verdecken_tprofil(object sender, MouseEventArgs e)
+        {
+            breite_b_tprofil.Visibility = Visibility.Hidden;
+        }
+
+        private void breite_bigb_anzeigen_tprofil(object sender, MouseEventArgs e)
+        {
+            breite_B_tprofil.Visibility = Visibility.Visible;
+        }
+
+        private void breite_bigb_verdecken_tprofil(object sender, MouseEventArgs e)
+        {
+            breite_B_tprofil.Visibility = Visibility.Hidden;
+        }
+
+        private void hoehe_h_anzeigen_tprofil(object sender, MouseEventArgs e)
+        {
+            hoehe_h_tprofil.Visibility = Visibility.Visible;
+        }
+
+        private void hoehe_h_verdecken_tprofil(object sender, MouseEventArgs e)
+        {
+            hoehe_h_tprofil.Visibility = Visibility.Hidden;
+        }
+
+        private void hoehe_bigh_anzeigen_tprofil(object sender, MouseEventArgs e)
+        {
+            hoehe_H_tprofil.Visibility = Visibility.Visible;
+
+        }
+
+        private void hoehe_bigh_verdecken_tprofil(object sender, MouseEventArgs e)
+        {
+            hoehe_H_tprofil.Visibility = Visibility.Hidden;
+        }
+
+        private void laenge_anzeigen_tprofil(object sender, MouseEventArgs e)
+        {
+            laenge_tprofil.Visibility = Visibility.Visible;
+        }
+
+        private void laenge_verdecken_tprofil(object sender, MouseEventArgs e)
+        {
+            laenge_tprofil.Visibility = Visibility.Hidden;
+        }
     }
 
 }
