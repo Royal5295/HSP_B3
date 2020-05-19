@@ -145,12 +145,21 @@ namespace HSP_Sprint2
         private void btn_berechnung_rechteckrohrprofil_Click(object sender, RoutedEventArgs e)
         {
 
+
+
+
+
         }
 
 
 
         private void btn_berechnung_rohrprofil_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
+
 
         }
 
@@ -159,6 +168,11 @@ namespace HSP_Sprint2
         private void btn_brechnung_rundprofil_Click(object sender, RoutedEventArgs e)
         {
 
+
+
+
+
+
         }
 
 
@@ -166,6 +180,10 @@ namespace HSP_Sprint2
 
         private void btn_brechnung_Rechteckprofil_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
 
         }
 

@@ -47,7 +47,7 @@
 
         </StackPanel>
 
-        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
+        <StackPanel x:Name="ausgaben3" Margin="0,257,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" Visibility="Hidden" >
 
             <Label Content="IZZ:" Target="{Binding ElementName=txtIZZ}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtIZZ" />
