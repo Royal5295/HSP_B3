@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Thomas\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thomas\\source\\repos\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
       "projectName": "HSP_Sprint2",
-      "projectPath": "C:\\Users\\Thomas\\source\\repos\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
-      "packagesPath": "C:\\Users\\Thomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thomas\\source\\repos\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\HSP_Sprint2.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\HSP_B3\\HSP_B3-4ebfe69742355ddbbc299d72f14f1353dc2ce68c\\HSP_Sprint2\\HSP_Sprint2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
