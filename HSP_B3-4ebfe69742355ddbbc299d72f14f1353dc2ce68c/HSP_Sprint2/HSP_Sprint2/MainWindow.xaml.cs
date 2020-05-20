@@ -163,7 +163,7 @@ namespace HSP_Sprint2
         // Berechnung
         public double berechnungVolumen_Rechteckprofil(double Breite, double Hoehe, double Laenge)
         {
-            double Volumen_Rechteckprofil = Breite * Hoehe * Laenge;
+            double Volumen_Rechteckprofil = Math.Round(Breite * Hoehe * Laenge,3);
             
 
             return Volumen_Rechteckprofil;
@@ -171,49 +171,49 @@ namespace HSP_Sprint2
 
        public double berechnungIXX_Rechteckprofil(double Breite, double Hoehe)
         { 
-            double IXX_Rechteckprofil = (Breite * (Math.Pow(Hoehe, 3)) / 12 );
+            double IXX_Rechteckprofil = Math.Round((Breite * (Math.Pow(Hoehe, 3)) / 12 ),3);
             
             return IXX_Rechteckprofil;
         }
 
         public double berechnungIYY_Rechteckprofil(double Breite, double Hoehe)
         {
-            double IYY_Rechteckprofil = (Hoehe * (Math.Pow(Breite, 3)) / 12);
+            double IYY_Rechteckprofil = Math.Round((Hoehe * (Math.Pow(Breite, 3)) / 12),3);
            
             return IYY_Rechteckprofil;
         }
 
         public double berechnungWXX_Rechteckprofil(double Breite, double Hoehe)
         {
-            double WXX_Rechteckprofil = (Breite * (Math.Pow(Hoehe, 2)) / 6);
+            double WXX_Rechteckprofil = Math.Round((Breite * (Math.Pow(Hoehe, 2)) / 6),3);
 
             return WXX_Rechteckprofil;
         }
 
         public double berechnungWYY_Rechteckprofil(double Breite, double Hoehe)
         {
-            double WYY_Rechteckprofil = (Hoehe * (Math.Pow(Breite, 2)) / 6);
+            double WYY_Rechteckprofil = Math.Round((Hoehe * (Math.Pow(Breite, 2)) / 6),3);
 
             return WYY_Rechteckprofil;
         }
 
         public double berechnungGewicht_Rechteckprofil(double Breite, double Hoehe, double Laenge)
             {
-                double Gewicht_Rechteckprofil = ((Breite * Hoehe * Laenge) * _matKonst);
+                double Gewicht_Rechteckprofil = Math.Round(((Breite * Hoehe * Laenge) * _matKonst),3);
 
                 return Gewicht_Rechteckprofil;
             }
         
         public double berechnungSchwerpunktX_Rechteckprofil(double Breite)
         {
-            double SchwerpunktX_Rechteckprofil = (Breite / 2);
+            double SchwerpunktX_Rechteckprofil = Math.Round((Breite / 2),3);
 
             return SchwerpunktX_Rechteckprofil;
         }
 
         public double berechnungSchwerpunktY_Rechteckprofil(double Hoehe)
         {
-            double SchwerpunktY_Rechteckprofil = (Hoehe / 2);
+            double SchwerpunktY_Rechteckprofil = Math.Round((Hoehe / 2),3);
 
             return SchwerpunktY_Rechteckprofil;
         }
@@ -273,7 +273,7 @@ namespace HSP_Sprint2
             }
         public double berechnungVolumen_Rundprofil(double Durchmesser, double Laenge)
         {
-            double Volumen_Rundprofil = (((Math.PI * Math.Pow(Durchmesser , 2))/ 4) * Laenge);
+            double Volumen_Rundprofil = Math.Round((((Math.PI * Math.Pow(Durchmesser , 2))/ 4) * Laenge),3);
 
 
             return Volumen_Rundprofil;
@@ -281,21 +281,21 @@ namespace HSP_Sprint2
 
         public double berechnungIXX_Rundprofil(double Durchmesser)
         {
-            double IXX_Rundprofil = ((Math.PI * Math.Pow(Durchmesser, 4)) / 64);
+            double IXX_Rundprofil = Math.Round(((Math.PI * Math.Pow(Durchmesser, 4)) / 64),3);
 
             return IXX_Rundprofil;
         }
         
         public double berechnungWXX_Rundprofil(double Durchmesser)
         {
-            double WXX_Rundprofil = ((Math.PI * Math.Pow(Durchmesser, 3))/3);
+            double WXX_Rundprofil = Math.Round(((Math.PI * Math.Pow(Durchmesser, 3))/3),3);
 
             return WXX_Rundprofil;
         }
 
         public double berechnungGewicht_Rundprofil(double Durchmesser, double Laenge)
         {
-            double Gewicht = ((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) * Laenge) * _matKonst);
+            double Gewicht = Math.Round(((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) * Laenge) * _matKonst),3);
 
             return Gewicht;
         }
@@ -303,7 +303,7 @@ namespace HSP_Sprint2
 
         public double berechnungSchwerpunktX_Rundprofil(double Durchmesser)
         {
-            double SchwerpunktX = Durchmesser / 2 ;
+            double SchwerpunktX = Math.Round(Durchmesser / 2,3) ;
 
             return SchwerpunktX;
         }
@@ -380,7 +380,7 @@ namespace HSP_Sprint2
         // Berechnung
         public double berechnungVolumen_Rohrprofil(double Durchmesser, double Dicke, double Laenge)
         {
-            double Volumen_Rohrprofil = (((Math.PI * Math.Pow(Durchmesser, 2)) / 4) - ((Math.PI * Math.Pow((Durchmesser - (2 * Dicke)), 2)) / 4)) * Laenge;
+            double Volumen_Rohrprofil = Math.Round((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) - ((Math.PI * Math.Pow((Durchmesser - (2 * Dicke)), 2)) / 4)) * Laenge,3);
 
 
             return Volumen_Rohrprofil;
@@ -388,21 +388,21 @@ namespace HSP_Sprint2
 
         public double berechnungIXX_Rohrprofil(double Durchmesser, double Dicke)
         {
-            double IXX_Rohrprofil = (Math.PI * (Math.Pow(Durchmesser, 4)) - (Math.Pow((Durchmesser - (2 * Dicke)), 4))) / 64;
+            double IXX_Rohrprofil = Math.Round((Math.PI * (Math.Pow(Durchmesser, 4)) - (Math.Pow((Durchmesser - (2 * Dicke)), 4))) / 64,3);
 
             return IXX_Rohrprofil;
         }
 
         public double berechnungWXX_Rohrprofil(double Durchmesser, double Dicke)
         {
-            double WXX_Rohrprofil = (Math.PI * (Math.Pow(Durchmesser, 4)) - (Math.Pow((Durchmesser - (2 * Dicke)), 4))) / 32;
+            double WXX_Rohrprofil = Math.Round((Math.PI * (Math.Pow(Durchmesser, 4)) - (Math.Pow((Durchmesser - (2 * Dicke)), 4))) / 32,3);
 
             return WXX_Rohrprofil;
         }
 
         public double berechnungGewicht_Rohrprofil(double Durchmesser, double Dicke, double Laenge)
         {
-            double Geweicht_Rohrprofil = (((Math.PI * Math.Pow(Durchmesser, 2)) / 4) - ((Math.PI * Math.Pow((Durchmesser - (2 * Dicke)), 2)) / 4)) * Laenge * _matKonst;
+            double Geweicht_Rohrprofil = Math.Round((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) - ((Math.PI * Math.Pow((Durchmesser - (2 * Dicke)), 2)) / 4)) * Laenge * _matKonst,3);
 
             return Geweicht_Rohrprofil;
         }
@@ -410,7 +410,7 @@ namespace HSP_Sprint2
 
         public double berechnungSchwerpunktX_Rohrprofil(double Durchmesser)
         {
-            double SchwerpunktX = Durchmesser / 2;
+            double SchwerpunktX = Math.Round(Durchmesser / 2,3);
 
             return SchwerpunktX;
         }
@@ -503,56 +503,56 @@ namespace HSP_Sprint2
 
         public double berechnungVolumen_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge)
         {
-            double Volumen_Rechteckrohrprofil = (Breite * Hoehe) - ((Breite - (2 * Dicke)) + (Hoehe - (2 * Dicke))) * Laenge;
+            double Volumen_Rechteckrohrprofil = Math.Round((Breite * Hoehe) - ((Breite - (2 * Dicke)) + (Hoehe - (2 * Dicke))) * Laenge,3);
 
             return Volumen_Rechteckrohrprofil;
         }
 
         public double berechnungIXX_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
         {
-            double IXX_Rechteckrohrprofil = ((Hoehe * Math.Pow(Breite, 3)) - (((Hoehe - (2 * Dicke))) * Math.Pow(Breite - (2 * Dicke), 3))) / 12;
+            double IXX_Rechteckrohrprofil = Math.Round(((Hoehe * Math.Pow(Breite, 3)) - (((Hoehe - (2 * Dicke))) * Math.Pow(Breite - (2 * Dicke), 3))) / 12,3);
 
             return IXX_Rechteckrohrprofil;
         }
 
         public double berechnungIYY_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
         {
-            double IYY_Rechteckrohrprofil = ((Breite * Math.Pow(Hoehe, 3)) - (((Breite - (2 * Dicke))) * Math.Pow(Hoehe - (2 * Dicke), 3))) / 12;
+            double IYY_Rechteckrohrprofil = Math.Round(((Breite * Math.Pow(Hoehe, 3)) - (((Breite - (2 * Dicke))) * Math.Pow(Hoehe - (2 * Dicke), 3))) / 12,3);
 
             return IYY_Rechteckrohrprofil;
         }
 
         public double berechnungWXX_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
         {
-            double WXX_Rechteckrohrprofil = ((Hoehe * Math.Pow(Breite, 3)) + (((Hoehe - (2 * Dicke))) * Math.Pow(Breite - (2 * Dicke), 3))) / 6 * Hoehe;
+            double WXX_Rechteckrohrprofil = Math.Round(((Hoehe * Math.Pow(Breite, 3)) + (((Hoehe - (2 * Dicke))) * Math.Pow(Breite - (2 * Dicke), 3))) / 6 * Hoehe,3);
 
             return WXX_Rechteckrohrprofil;
         }
 
         public double berechnungWYY_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke)
         {
-            double WYY_Rechteckrohrprofil = ((Breite * Math.Pow(Hoehe, 3)) + (((Breite - (2 * Dicke))) * Math.Pow(Hoehe - (2 * Dicke), 3))) / 6 * Hoehe;
+            double WYY_Rechteckrohrprofil = Math.Round(((Breite * Math.Pow(Hoehe, 3)) + (((Breite - (2 * Dicke))) * Math.Pow(Hoehe - (2 * Dicke), 3))) / 6 * Hoehe,3);
 
             return WYY_Rechteckrohrprofil;
         }
 
         public double berechnungGewicht_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge)
             {
-            double Gewicht_Rechteckrohrprofil = (Breite * Hoehe) - ((Breite - (2 * Dicke)) + (Hoehe - (2 * Dicke))) * Laenge * _matKonst;
+            double Gewicht_Rechteckrohrprofil = Math.Round((Breite * Hoehe) - ((Breite - (2 * Dicke)) + (Hoehe - (2 * Dicke))) * Laenge * _matKonst,3);
 
                 return Gewicht_Rechteckrohrprofil;
             }
         
         public double berechnungSchwerpunktX_Rechteckrohrprofil(double Breite)
         {
-            double SchwerpunktX_Rechteckrohrprofil = (Breite / 2);
+            double SchwerpunktX_Rechteckrohrprofil = Math.Round((Breite / 2),3);
 
             return SchwerpunktX_Rechteckrohrprofil;
         }
 
         public double berechnungSchwerpunktY_Rechteckrohrprofil(double Hoehe)
         {
-            double SchwerpunktY_Rechteckrohrprofil = (Hoehe / 2);
+            double SchwerpunktY_Rechteckrohrprofil = Math.Round((Hoehe / 2),3);
 
             return SchwerpunktY_Rechteckrohrprofil;
         }
@@ -661,56 +661,56 @@ namespace HSP_Sprint2
 
         public double berechnungVolumen_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h, double Laenge_l)
         {
-            double Volumen_Tprofil = ((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l;
+            double Volumen_Tprofil = Math.Round(((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l,3);
 
             return Volumen_Tprofil;
         }
 
         public double berechnungIXX_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
         {
-            double IXX_Tprofil = (Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 12;
+            double IXX_Tprofil = Math.Round((Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 12,3);
 
             return IXX_Tprofil;
         }
 
         public double berechnungIYY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
         {
-            double IYY_Tprofil = (Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 12;
+            double IYY_Tprofil = Math.Round((Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 12,3);
 
             return IYY_Tprofil;
         }
 
         public double berechnungWXX_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
         {
-            double WXX_Tprofil = (Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 6 * Hoehe_H;
+            double WXX_Tprofil = Math.Round((Hoehe_H * Math.Pow(Breite_B, 3) + Hoehe_h * Math.Pow(Breite_b, 3)) / 6 * Hoehe_H,3);
 
             return WXX_Tprofil;
         }
 
         public double berechnungWYY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
         {
-            double WYY_Tprofil = (Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 6 * Hoehe_H;
+            double WYY_Tprofil = Math.Round((Breite_B * Math.Pow(Hoehe_H, 3) + Breite_b * Math.Pow(Hoehe_h, 3)) / 6 * Hoehe_H,3);
 
             return WYY_Tprofil;
         }
 
         public double berechnungGewicht_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h, double Laenge_l)
         {
-            double Gewicht_Tprofil = ((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l * _matKonst;
+            double Gewicht_Tprofil = Math.Round(((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l * _matKonst,3);
 
             return Gewicht_Tprofil;
         }
         
         public double berechnungSchwerpunktX_Tprofil( double Hoehe_H)
         {
-            double SchwerpunktX_tProfil = Hoehe_H / 2;
+            double SchwerpunktX_tProfil = Math.Round(Hoehe_H / 2,3);
 
             return SchwerpunktX_tProfil;
         }
 
         public double berechnungSchwerpunktY_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h)
         {
-            double SchwerpunktY_tProfil = 0.5 * (((Breite_B * Math.Pow(Hoehe_H, 2)) + (Breite_b * Math.Pow(Hoehe_h, 2))) / (Breite_B * Hoehe_H) + (Breite_b * Hoehe_h));
+            double SchwerpunktY_tProfil = Math.Round(0.5 * (((Breite_B * Math.Pow(Hoehe_H, 2)) + (Breite_b * Math.Pow(Hoehe_h, 2))) / (Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)),3);
 
             return SchwerpunktY_tProfil;
         }
