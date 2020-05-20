@@ -18,15 +18,6 @@ namespace HSP_Sprint_1
             Console.WriteLine("Der Rechteckcalculator");
             Console.WriteLine();
 
-            /*
-            Console.WriteLine("Bitte geben Sie Länge a ein.");
-            String eingabe_a = Console.ReadLine();
-            double  a = Convert.ToDouble(eingabe_a);
-            
-            Console.WriteLine("Bitte geben Sie Länge b ein.");
-            String eingabe_b = Console.ReadLine();
-            b = Convert.ToDouble(eingabe_b);
-            */
             do
             {
 
@@ -44,6 +35,39 @@ namespace HSP_Sprint_1
             Console.WriteLine("Das Programm wird beendet.");
             Console.ReadKey();
         }
+
+                try
+                {
+
+
+                    // Anweisungen mit Variablen
+                    Console.Write("Enter the rectangle's height:");
+                    double height = Convert.ToDouble(Console.ReadLine());
+
+                    Console.Write("Enter the rectangle's width:");
+                    double width = Convert.ToDouble(Console.ReadLine());
+
+                    Console.Write("Enter the rectangle's length:");
+                    double length = Convert.ToDouble(Console.ReadLine());
+
+                    Console.Write("Enter the rectangle's density:");
+                    double density = Convert.ToDouble(Console.ReadLine());
+
+
+                    // Calculations
+
+
+
+                    double Volume = (height * width * length);
+
+                    double Area = (width * height);
+
+                    double Mass = (density * Volume);
+
+                    double IXX = ((height * width * width * width) / 12);
+
+                    double IYY = ((height * height * height * width) / 12);
+
 
         static double Eingabe_a()
         {
@@ -82,6 +106,17 @@ namespace HSP_Sprint_1
                 {
                     b = Convert.ToDouble(eingabe_b);
                     checkmate = false;
+
+                    Console.WriteLine("Perimeter of rectangle = {0}", Perimeter);
+                    Console.WriteLine("Area of rectangle = {0}", Area);
+                    Console.WriteLine("Volume of rectangle ={0}", Volume);
+                    Console.WriteLine("Mass of rectangle ={0}", Mass);
+                    Console.WriteLine("Second Moment of Inertia Ixx ={0}", IXX);
+                    Console.WriteLine("Second Moment of Inertia Iyy ={0}", IYY);
+                    Console.WriteLine("Moments of resistance Wxx ={0}", WXX);
+                    Console.WriteLine("Moments of resistance Wyy ={0}", WYY);
+                    Console.ReadKey();
+
                 }
                 catch (FormatException)
                 {
