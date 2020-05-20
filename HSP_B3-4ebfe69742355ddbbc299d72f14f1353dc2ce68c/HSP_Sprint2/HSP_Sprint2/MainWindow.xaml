@@ -74,8 +74,9 @@
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="77*"/>
             </Grid.ColumnDefinitions>
-            
-            <TreeView x:Name="Profilauswahl" Margin="0,120,215,227" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
+
+
+            <TreeView x:Name="Profilauswahl" Margin="0,80,215,250" BorderThickness="2,2,2,2" ClipToBounds="True" SnapsToDevicePixels="True" BorderBrush="#FF000104" Background="#FFFBFBFB" FontWeight="Bold" FontStyle="Normal">
                 <Themes:BulletChrome/>
 
                 <TreeViewItem Header="Vollprofil" IsExpanded="False">
@@ -95,8 +96,15 @@
 
 
 
-            <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
 
+
+            <Image x:Name="Jade_hs_picture" Height="107" VerticalAlignment="Top" Source="/jadehs-logo.png" Margin="0,0,215,0"  />
+            <ComboBox x:Name="Combobox_rechteck" FontSize="11" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="180" SelectedIndex="0" SelectionChanged="Combobox_rechteck_SelectionChanged">
+                <ComboBoxItem x:Name="Combobox_Stahl" Content="Stahl"  ></ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Titanium" Content="Titan" ></ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Aluminium" Content="Aluminium" ></ComboBoxItem>
+                <ComboBoxItem x:Name="Combobox_Kupfer" Content="Kupfer" ></ComboBoxItem>
+            </ComboBox>
 
         </Grid>
 
@@ -117,16 +125,9 @@
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem x:Name="Combobox_Stahl" Selected="Stahl_Selected">Stahl</ComboBoxItem>
-                <ComboBoxItem x:Name="Combobox_Titanium" IsSelected="True" Selected="Titanium_Selected">Titanium</ComboBoxItem>
-                <ComboBoxItem x:Name="Combobox_Aluminium" Selected="Aluminium_Selected">Aluminium</ComboBoxItem>
-                <ComboBoxItem x:Name="Combobox_Kupfer" Selected="Kupfer_Selected">Kupfer</ComboBoxItem>
-            </ComboBox>
-            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Image HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Center" Width="267" Source="/RechteckProfil_V.jpeg" Stretch="UniformToFill"/>
             <Label Content="Rechteckprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
-            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_Rechteckprofil" Click="btn_brechnung_Rechteckprofil_Click" />
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="-69,212,0,0" VerticalAlignment="Top" Width="54" Height="40" x:Name="btn_brechnung_Rechteckprofil" Click="btn_brechnung_Rechteckprofil_Click" />
             <Line x:Name="laenge_Rechteck" X1="35" Y1=" 126" X2=" 195" Y2=" 220" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="3" Visibility="Hidden"/>
             <Line x:Name="breite_Rechteck" X1="240" Y1=" 223" X2="270" Y2=" 205" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
             <Line x:Name="hoehe_Rechteck" X1="260" Y1=" 135" X2="260" Y2=" 185" Stroke="Red" StrokeThickness=" 3" StrokeDashArray="1" Visibility="Hidden"/>
@@ -146,13 +147,6 @@
             <Label Content="lange:" HorizontalAlignment="Left" Margin="356,0,0,0" VerticalAlignment="Center"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,0,0,0" VerticalAlignment="Center"/>
-            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
-            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem>Stahl</ComboBoxItem>
-                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
-                <ComboBoxItem>Aluminium</ComboBoxItem>
-                <ComboBoxItem>kupfer</ComboBoxItem>
-            </ComboBox>
             <Label Content="Rundprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image x:Name="RundProfil_V" HorizontalAlignment="Left" Height="182" Margin="30,0,0,0" VerticalAlignment="Center" Width="254" Source="/RundProfil_V.jpeg" Stretch="UniformToFill"/>
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_brechnung_rundprofil" Click="btn_brechnung_Rundprofil_Click"/>
@@ -174,17 +168,10 @@
             <TextBox HorizontalAlignment="Left" Margin="408,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" x:Name="txtbox_rohrprofil_dm" MouseLeave="durchmesser_verdecken_rohr" MouseEnter="durchmesser_anzeigen_rohr"/>
             <Label Content="Durchmesser:" HorizontalAlignment="Left" Margin="316,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.468,1.658"/>
             <TextBox HorizontalAlignment="Left" Margin="408,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rohrprofil_d"/>
-            <Label Content="Dicke:" HorizontalAlignment="Left" Margin="351,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
+            <Label Content="Wandstärke:" HorizontalAlignment="Left" Margin="322,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
-            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
-            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem>Stahl</ComboBoxItem>
-                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
-                <ComboBoxItem>Aluminium</ComboBoxItem>
-                <ComboBoxItem>kupfer</ComboBoxItem>
-            </ComboBox>
             <Label Content="Rohrprofil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="108"/>
             <Image HorizontalAlignment="Left" Height="192" Margin="33,46,0,0" VerticalAlignment="Top" Width="231" Source="/Rohrprofil_H.jpeg" Stretch="UniformToFill"/>
             <Button Content="Calculate" HorizontalAlignment="Left" Margin="-187,212,0,0" VerticalAlignment="Top" Width="168" Height="40" x:Name="btn_berechnung_rohrprofil" Click="btn_berechnung_Rohrprofil_Click"/>
@@ -253,13 +240,6 @@
             <TextBox HorizontalAlignment="Left" Margin="407,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_Tprofil_l" MouseEnter="laenge_anzeigen_tprofil" MouseLeave="laenge_verdecken_tprofil"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="345,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658" />
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,160,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem>Stahl</ComboBoxItem>
-                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
-                <ComboBoxItem>Aluminium</ComboBoxItem>
-                <ComboBoxItem>kupfer</ComboBoxItem>
-            </ComboBox>
-            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <Label Content="T-profil" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="31" Width="137"/>
             <Image x:Name="T_profil_S" HorizontalAlignment="Left" Height="177" Margin="10,41,0,0" VerticalAlignment="Top" Width="269" Source="/Tprofil_S.jpeg" Stretch="UniformToFill"/>
 

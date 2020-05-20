@@ -12,33 +12,10 @@ namespace HSP_Sprint2
         public MainWindow()
         {
             //InitializeComponent();
+       
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private double _matKonst = 0;
 
         private void Rechteckprofil_selected(object sender, RoutedEventArgs e)
         {
@@ -113,34 +90,17 @@ namespace HSP_Sprint2
             btn_brechnung_Tprofil.Visibility = Visibility.Visible;
         }
 
-       private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-        public void Stahl_Selected(object sender, RoutedEventArgs e)
-        {
-            double Stahl = 0.00787;
-        }
-
-        public void Titanium_Selected(object sender, RoutedEventArgs e)
-        {
-            double Titanium = 0.004506;
-        }
-
-        public void Aluminium_Selected(object sender, RoutedEventArgs e)
-        {
-            double Aluminium = 0.0027;
-        }
-
-        public void Kupfer_Selected(object sender, RoutedEventArgs e)
-        {
-            double Kupfer = 0.00896;
-        }
+        
+       
         
         // Rechteckprofil Ausfuehrung Berechnung
         public void btn_brechnung_Rechteckprofil_Click(object sender, RoutedEventArgs e)
         {
-            double Stahl;
+            
             bool checkmate = false;
             do
             { 
@@ -188,7 +148,7 @@ namespace HSP_Sprint2
                     txtWYY.Text = (berechnungWYY_Rechteckprofil(Breite, Hoehe) + "mm^4");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckprofil(Breite) + "mm");
                     SchwerpunktY.Text  = (berechnungSchwerpunktY_Rechteckprofil(Hoehe) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht_Rechteckprofil(Breite, Hoehe, Laenge, Stahl) + "g");
+                    txtMasse.Text = (berechnungGewicht_Rechteckprofil(Breite, Hoehe, Laenge) + "g");
 
                 }
 
@@ -237,13 +197,13 @@ namespace HSP_Sprint2
             return WYY_Rechteckprofil;
         }
 
-        /*public double berechnungGewicht_Rechteckprofil(double Breite, double Hoehe, double Laenge, double Stahl)
+        public double berechnungGewicht_Rechteckprofil(double Breite, double Hoehe, double Laenge)
             {
-                double Gewicht_Rechteckprofil = ((Breite * Hoehe * Laenge) * Stahl);
+                double Gewicht_Rechteckprofil = ((Breite * Hoehe * Laenge) * _matKonst);
 
                 return Gewicht_Rechteckprofil;
             }
-        */
+        
         public double berechnungSchwerpunktX_Rechteckprofil(double Breite)
         {
             double SchwerpunktX_Rechteckprofil = (Breite / 2);
@@ -333,13 +293,13 @@ namespace HSP_Sprint2
             return WXX_Rundprofil;
         }
 
-        /*public double berechnungGewicht_Rundprofil(double Durchmesser, double Laenge, Sorte)
+        public double berechnungGewicht_Rundprofil(double Durchmesser, double Laenge)
         {
-            double Gewicht = ((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) * Laenge) * Sorte);
+            double Gewicht = ((((Math.PI * Math.Pow(Durchmesser, 2)) / 4) * Laenge) * _matKonst);
 
             return Gewicht;
         }
-       */
+       
 
         public double berechnungSchwerpunktX_Rundprofil(double Durchmesser)
         {
@@ -362,6 +322,7 @@ namespace HSP_Sprint2
                         double Durchmesser = double.Parse(txtbox_rohrprofil_dm.Text);
                         double Laenge = double.Parse(txtbox_rohrprofil_l.Text);
                         double Dicke = double.Parse(txtbox_rohrprofil_d.Text);
+                   
 
                         if (Durchmesser <= 0)
                         {
@@ -401,7 +362,7 @@ namespace HSP_Sprint2
                         txtIYY.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
                         txtWXX.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
                         txtWYY.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
-                        //txtGewicht.Text = (berechnungGewicht(Durchmesser, Dicke, Laenge, Volumen, Sorte) + "g");
+                        txtMasse.Text = (berechnungGewicht_Rohrprofil(Durchmesser, Dicke, Laenge) + "g");
                         SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
                         SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
 
@@ -439,13 +400,13 @@ namespace HSP_Sprint2
             return WXX_Rohrprofil;
         }
 
-        /*public double berechnungGewicht_Rohrprofil(double Durchmesser, double Dicke, double Laenge, double Volumen, Material)
+        public double berechnungGewicht_Rohrprofil(double Durchmesser, double Dicke, double Laenge)
         {
-            double Geweicht_Rohrprofil = Volumen * Material
+            double Geweicht_Rohrprofil = (((Math.PI * Math.Pow(Durchmesser, 2)) / 4) - ((Math.PI * Math.Pow((Durchmesser - (2 * Dicke)), 2)) / 4)) * Laenge * _matKonst;
 
             return Geweicht_Rohrprofil;
         }
-        */
+        
 
         public double berechnungSchwerpunktX_Rohrprofil(double Durchmesser)
         {
@@ -522,7 +483,7 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
                     txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
                     txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Sorte) + "g");
+                    txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
 
@@ -575,13 +536,13 @@ namespace HSP_Sprint2
             return WYY_Rechteckrohrprofil;
         }
 
-        /*public double berechnungGewicht_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge, double Volumen, double Dichte_Material)
+        public double berechnungGewicht_Rechteckrohrprofil(double Breite, double Hoehe, double Dicke, double Laenge)
             {
-                double Gewicht_Rechtekrohrprofil = Volumen * Dichte_Material
+            double Gewicht_Rechteckrohrprofil = (Breite * Hoehe) - ((Breite - (2 * Dicke)) + (Hoehe - (2 * Dicke))) * Laenge * _matKonst;
 
                 return Gewicht_Rechteckrohrprofil;
             }
-        */
+        
         public double berechnungSchwerpunktX_Rechteckrohrprofil(double Breite)
         {
             double SchwerpunktX_Rechteckrohrprofil = (Breite / 2);
@@ -599,7 +560,7 @@ namespace HSP_Sprint2
 
         public void btn_brechnung_Tprofil_Click(object sender, RoutedEventArgs e)
         {
-            double Stahl;
+            
             bool checkmate = false;
             do
             {
@@ -680,7 +641,7 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     txtWXX.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     txtWYY.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht_Tprofil(Breite, Hoehe, Dicke, Laenge, Volumen, Dichte_Material) + "g");
+                    txtGewicht.Text = (berechnungGewicht_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
 
@@ -733,13 +694,13 @@ namespace HSP_Sprint2
             return WYY_Tprofil;
         }
 
-       /* public double berechnungGewicht_Tprofil(double Volumen, double Dichte_Material)
+        public double berechnungGewicht_Tprofil(double Breite_B, double Breite_b, double Hoehe_H, double Hoehe_h, double Laenge_l)
         {
-            double Gewicht_Tprofil = Volumen * Dichte_Material;
+            double Gewicht_Tprofil = ((Breite_B * Hoehe_H) + (Breite_b * Hoehe_h)) * Laenge_l * _matKonst;
 
             return Gewicht_Tprofil;
         }
-        */
+        
         public double berechnungSchwerpunktX_Tprofil( double Hoehe_H)
         {
             double SchwerpunktX_tProfil = Hoehe_H / 2;
@@ -754,50 +715,7 @@ namespace HSP_Sprint2
             return SchwerpunktY_tProfil;
         }
 
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-
-      
-
-        
-       
-
-       
-
-      
-
-
-      
-
-
-       
-
-        
-
-        
-
-
-        
-
-        
-
-       
-
-
-
-
-
-      
+           
 
         private void laenge_anzeigen_rechteck(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -995,12 +913,58 @@ namespace HSP_Sprint2
                 laenge_tprofil.Visibility = Visibility.Hidden;
 
         }
+
+        private void Combobox_rechteck_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int selIndex = Combobox_rechteck.SelectedIndex;
+            switch (selIndex)
+            {
+                case 2:
+                    _matKonst = 0.0027;
+                    break;
+                case 0:
+                    _matKonst = 0.00787;
+                    break;
+                case 3:
+                    _matKonst = 0.00896;
+                    break;
+                case 1:
+                    _matKonst = 0.004506;
+                    break;
+                default:
+                    _matKonst = -1;
+                    break;
+
+
+            }
+
+           
+
+
+        }
+
+             /*    if (Combobox_rechteck.
+            {
+               double Material = 0.0027;
+            }
+            if (Combobox_Kupfer.IsSelected)
+            {
+                double Material = 0.00896;
+            }
+            if (Combobox_Stahl.IsSelected)
+            {
+                double Material = 0.00787;
+            }
+            if (Combobox_Titanium.IsSelected)
+            {
+                double Material = 0.004506;
+            }
+            */
+        }
     }
 
 
 
 
-
-}
 
 
