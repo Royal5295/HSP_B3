@@ -31,7 +31,7 @@
 
         <StackPanel x:Name="ausgaben2" Margin="0,258,0,0" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Top" Width="242" Height="201" >
 
-            <Label Content="Masse:" Target="{Binding ElementName=txtMasse}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
+            <Label Content="Gewicht:" Target="{Binding ElementName=txtMasse}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" />
             <TextBox x:Name="txtMasse" />
             <Label Content="IYY:" Target="{Binding ElementName=txtIYY}" />
             <TextBox x:Name="txtIYY" />
@@ -180,7 +180,7 @@
 
         </Grid>
 
-        <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Hidden">
+        <Grid Margin="194,10,10,128" x:Name="Rechteckrohrprofil_Grid" Visibility="Visible">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFEFF"/>
@@ -199,13 +199,6 @@
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,72,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,114,0,0" VerticalAlignment="Top"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="523,157,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="408,201,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem>Stahl</ComboBoxItem>
-                <ComboBoxItem IsSelected="True">Titanium</ComboBoxItem>
-                <ComboBoxItem>Aluminium</ComboBoxItem>
-                <ComboBoxItem>kupfer</ComboBoxItem>
-            </ComboBox>
-            <Label Content="Dichte:" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,1.658"/>
             <TextBox HorizontalAlignment="Left" Margin="408,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" x:Name="txtbox_rechteckrohrprofil_l" MouseEnter="laenge_anzeigen_rechteckrohr" MouseLeave="laenge_verdecken_rechteckrohr"/>
             <Label Content="mm" HorizontalAlignment="Left" Margin="522,44,0,0" VerticalAlignment="Top"/>
             <Label Content="Lange:" HorizontalAlignment="Left" Margin="349,40,0,0" VerticalAlignment="Top"/>

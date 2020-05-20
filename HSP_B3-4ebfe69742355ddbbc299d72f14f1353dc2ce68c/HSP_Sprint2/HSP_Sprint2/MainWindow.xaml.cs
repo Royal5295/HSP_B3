@@ -256,7 +256,7 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIXX_Rundprofil(Durchmesser) + "mm");
                     txtWXX.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
                     txtWYY.Text = (berechnungWXX_Rundprofil(Durchmesser) + "mm");
-                    //txtGewicht.Text = (berechnungGewicht(Durchmesser, Laenge, Sorte) + "g");
+                    txtMasse.Text = (berechnungGewicht_Rundprofil(Durchmesser, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rundprofil(Durchmesser) + "mm");
                        
@@ -362,7 +362,7 @@ namespace HSP_Sprint2
                         txtIYY.Text = (berechnungIXX_Rohrprofil(Durchmesser, Dicke) + "mm");
                         txtWXX.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
                         txtWYY.Text = (berechnungWXX_Rohrprofil(Durchmesser, Dicke) + "mm");
-                        txtMasse.Text = (berechnungGewicht_Rohrprofil(Durchmesser, Dicke, Laenge) + "g");
+                        txtMasse.Text = (berechnungGewicht_Rundprofil(Durchmesser, Laenge) + "g");
                         SchwerpunktX.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
                         SchwerpunktY.Text = (berechnungSchwerpunktX_Rohrprofil(Durchmesser) + "mm");
 
@@ -483,7 +483,7 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
                     txtWXX.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
                     txtWYY.Text = (berechnungWXX_Rechteckrohrprofil(Breite, Hoehe, Dicke) + "mm");
-                    txtGewicht.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "g");
+                    txtMasse.Text = (berechnungGewicht_Rechteckrohrprofil(Breite, Hoehe, Dicke, Laenge) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Breite) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktX_Rechteckrohrprofil(Hoehe) + "mm");
 
@@ -641,7 +641,7 @@ namespace HSP_Sprint2
                     txtIYY.Text = (berechnungIXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     txtWXX.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
                     txtWYY.Text = (berechnungWXX_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
-                    txtGewicht.Text = (berechnungGewicht_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l) + "g");
+                    txtMasse.Text = (berechnungGewicht_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h, Laenge_l) + "g");
                     SchwerpunktX.Text = (berechnungSchwerpunktX_Tprofil(Hoehe_H) + "mm");
                     SchwerpunktY.Text = (berechnungSchwerpunktY_Tprofil(Breite_B, Breite_b, Hoehe_H, Hoehe_h) + "mm");
 
